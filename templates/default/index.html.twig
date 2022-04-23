@@ -1,0 +1,303 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+
+            <!-- Button Image -->
+            <button type="button" class="btn dossier1" data-bs-toggle="modal" data-bs-target="#dossierImage">
+                <img class="" src="{{ asset("/images/dossier.svg") }}">
+            </button>
+            <p class="text1">Images</p>
+
+            <!-- Modal Images-->
+            <div class="modal fade" id="dossierImage" tabindex="-1" aria-labelledby="dossierImage" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+
+                        <div class="modal-header py-0 px-16">
+                            <img class="" src="{{ asset("/images/picture.svg") }}">
+                            <h3 class="mx-2 pt-2">Dossier Images</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <nav class="side-nav">
+                                <div class="wrapper">
+
+                                    <div class="nav-bloc n-1">
+                                        <img class="" src="{{ asset("/images/dossier.svg") }}">
+
+                                        <div class="sub-nav">
+                                            <h2>IMAGES</h2>
+                                            <ul>
+                                                <li>
+                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
+                                                    <a >RAPPORT_AVALANCHE_Fino.png</a>
+                                                    <div class="sub-nav2">
+                                                        <a >RAPPORT_AVALANCHE_Fino.png</a>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
+
+                                                    <a >Champs_Actuel.png</a>
+                                                </li>
+                                                <li>
+                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
+
+                                                    <a >Media_Monde.png</a>
+                                                </li>
+                                                <li>
+                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
+
+                                                    <a >News_France.png</a>
+                                                </li>
+                                                <li>
+                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
+
+                                                    <a >Avis_de_Recherche_Nicolas_Zlatesky.jpeg</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="nav-bloc n-2">
+                                        <img class="" src="{{ asset("/images/dossier.svg") }}">
+
+                                        <div class="sub-nav">
+                                            <h2>Vidéos</h2>
+                                            <ul>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="nav-bloc n-3">
+                                        <img class="" src="{{ asset("/images/dossier.svg") }}">
+                                        <div class="sub-nav">
+                                            <h2>Archives</h2>
+                                            <ul>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                                <li>
+                                                    <a >Link</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </nav>
+
+                            <main class="main-content">
+                                <h1>Main Content</h1>
+                            </main>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Video -->
+            <button type="button" class="btn dossier2" data-bs-toggle="modal" data-bs-target="#dossierVideo">
+                <img class="" src="{{ asset("/images/dossier.svg") }}">
+            </button>
+            <p class="text2">Videos</p>
+
+            <!-- Modal video-->
+            <div class="modal fade" id="dossierVideo" tabindex="-1" aria-labelledby="dossierVideo" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <img class="" src="{{ asset("/images/tableau.svg") }}">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Archives -->
+            <button type="button" class="btn dossier3" data-bs-toggle="modal" data-bs-target="#dossierArchives">
+                <img class="" src="{{ asset("/images/dossier.svg") }}">
+            </button>
+            <p class="text3">Archives</p>
+
+            <!-- Modal Archives-->
+            <div class="modal fade" id="dossierArchives" tabindex="-1" aria-labelledby="dossierArchives" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <img class="" src="{{ asset("/images/tableau.svg") }}">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-4">
+            <img class="imgCenter" src="{{ asset("/images/LogoNoir.png") }}">
+        </div>
+        <div class="col-lg-4">
+            <img class="imgTimer" src="{{ asset("/images/timer.svg") }}">
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container-fluid"  >
+        <div class="row">
+
+            <div class="col-lg-2">
+                <div class="rectangle">
+                    <a  href="{{ path('chat') }}">
+                        <img src="{{ asset("/images/logoRond.svg") }}">
+                        <h5>CONTINUER</h5>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-1 d-flex justify-content-between px-0">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="" src="{{ asset("/images/tableau.svg") }}">
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <img class="" src="{{ asset("/images/tableau.svg") }}">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    <img class="" src="{{ asset("/images/ratp2.svg") }}">
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <img class="" src="{{ asset("/images/ratp2.svg") }}">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+
+                                    <div id="enigme" class="container">
+                                            <div class="row" >
+                                                <div class="col-lg-12 pt-2" id="fondEnigme">
+                                                    <h2 class="text-center">ENIGME</h2>
+                                                </div>
+                                                <div class="col-lg-12 pt-5">
+                                                    <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
+                                                        those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"
+                                                        by Cicero are also reproduced in their exact original form, accompanied by English
+                                                        versions from the 1914 translation by H. Rackham.</p>
+                                                </div>
+
+                                            </div>
+                                    </div>
+
+
+                                <img class="metro1" src="{{ asset("/images/metro1.svg") }}">
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+            <div class="col-lg-3 d-flex justify-content-around pt-2">
+                <a href="{{ path('chat') }}"><img class="pt-1" src="{{ asset("/images/battery.svg") }}" title="Batterie 90%"></a>
+                <a href="{{ path('chat') }}"><img src="{{ asset("/images/logoChat.svg") }}" title="CHAT"></a>
+                <a href="{{ path('chat') }}"><img src="{{ asset("/images/temps.svg") }}" title="Temps nuageux"></a>
+                <a href="{{ path('chat') }}"><img src="{{ asset("/images/wifi.svg") }}" title="WIFI activé"></a>
+                <a href="{{ path('chat') }}"><img src="{{ asset("/images/HIlogoPtit.svg") }}"></a>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+{% endblock %}
