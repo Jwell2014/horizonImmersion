@@ -5,13 +5,14 @@
 {% block body %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-2 dispo">
 
             <!-- Button Image -->
             <button type="button" class="btn dossier1" data-bs-toggle="modal" data-bs-target="#dossierImage">
-                <img class="" src="{{ asset("/images/dossier.svg") }}">
+                <img class="pt-5" src="{{ asset("/images/dossier.svg") }}">
+                <p class="text1">Images</p>
             </button>
-            <p class="text1">Images</p>
+
 
             <!-- Modal Images-->
             <div class="modal fade" id="dossierImage" tabindex="-1" aria-labelledby="dossierImage" aria-hidden="true">
@@ -26,13 +27,18 @@
 
                         <div class="modal-body container">
                             <div class="row">
+
                                 <div class="col-lg-2">
-                                    <img class="navDossier" id="docImg" src="{{ asset("/images/dossier.svg") }}">
+                                    <img class="navDossier active" id="docImg" src="{{ asset("/images/dossier.svg") }}">
+                                    <p class="text-center">Images</p>
                                     <img class="navDossier" src="{{ asset("/images/dossier.svg") }}">
+                                    <p class="text-center">Videos</p>
                                     <img class="navDossier" src="{{ asset("/images/dossier.svg") }}">
+                                    <p class="text-center">Archives</p>
                                 </div>
-                                <div class="col-lg-4 nav2">
-                                    <div class="linkImage">
+
+                                <div class="col-lg-4 nav2 visible">
+                                        <div class="linkImage">
                                         <a>
                                             <img  class="navImage" src="{{ asset("/images/picture.svg") }}">
                                             <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
@@ -81,9 +87,10 @@
 
             <!-- Button Video -->
             <button type="button" class="btn dossier2" data-bs-toggle="modal" data-bs-target="#dossierVideo">
-                <img class="" src="{{ asset("/images/dossier.svg") }}">
+                <img class="pt-5" src="{{ asset("/images/dossier.svg") }}">
+                <p class="text2">Videos</p>
             </button>
-            <p class="text2">Videos</p>
+
 
             <!-- Modal video-->
             <div class="modal fade" id="dossierVideo" tabindex="-1" aria-labelledby="dossierVideo" aria-hidden="true">
@@ -107,9 +114,10 @@
 
             <!-- Button Archives -->
             <button type="button" class="btn dossier3" data-bs-toggle="modal" data-bs-target="#dossierArchives">
-                <img class="" src="{{ asset("/images/dossier.svg") }}">
+                <img class="pt-5" src="{{ asset("/images/dossier.svg") }}">
+                <p class="text3">Archives</p>
             </button>
-            <p class="text3">Archives</p>
+
 
             <!-- Modal Archives-->
             <div class="modal fade" id="dossierArchives" tabindex="-1" aria-labelledby="dossierArchives" aria-hidden="true">
