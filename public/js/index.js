@@ -1,3 +1,4 @@
+/*
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
@@ -36,4 +37,4 @@ io.on('connection', (socket) => {
 
 server.listen(port, () => {
     console.log(`Server started on port: ${port}`);
-});
+});*/

@@ -21,113 +21,55 @@
                         <div class="modal-header py-0 px-16">
                             <img class="" src="{{ asset("/images/picture.svg") }}">
                             <h3 class="mx-2 pt-2">Dossier Images</h3>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close ferm" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
-                        <div class="modal-body">
-                            <nav class="side-nav">
-                                <div class="wrapper">
-
-                                    <div class="nav-bloc n-1">
-                                        <img class="" src="{{ asset("/images/dossier.svg") }}">
-
-                                        <div class="sub-nav">
-                                            <h2>IMAGES</h2>
-                                            <ul>
-                                                <li>
-                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
-                                                    <a >RAPPORT_AVALANCHE_Fino.png</a>
-                                                    <div class="sub-nav2">
-                                                        <a >RAPPORT_AVALANCHE_Fino.png</a>
-                                                    </div>
-
-                                                </li>
-                                                <li>
-                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
-
-                                                    <a >Champs_Actuel.png</a>
-                                                </li>
-                                                <li>
-                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
-
-                                                    <a >Media_Monde.png</a>
-                                                </li>
-                                                <li>
-                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
-
-                                                    <a >News_France.png</a>
-                                                </li>
-                                                <li>
-                                                    <img class="" src="{{ asset("/images/picture.svg") }}">
-
-                                                    <a >Avis_de_Recherche_Nicolas_Zlatesky.jpeg</a>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="nav-bloc n-2">
-                                        <img class="" src="{{ asset("/images/dossier.svg") }}">
-
-                                        <div class="sub-nav">
-                                            <h2>Vidéos</h2>
-                                            <ul>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="nav-bloc n-3">
-                                        <img class="" src="{{ asset("/images/dossier.svg") }}">
-                                        <div class="sub-nav">
-                                            <h2>Archives</h2>
-                                            <ul>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                                <li>
-                                                    <a >Link</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
+                        <div class="modal-body container">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img class="navDossier" id="docImg" src="{{ asset("/images/dossier.svg") }}">
+                                    <img class="navDossier" src="{{ asset("/images/dossier.svg") }}">
+                                    <img class="navDossier" src="{{ asset("/images/dossier.svg") }}">
                                 </div>
-                            </nav>
+                                <div class="col-lg-4 nav2">
+                                    <div class="linkImage">
+                                        <a>
+                                            <img  class="navImage" src="{{ asset("/images/picture.svg") }}">
+                                            <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                        </a>
+                                        </div>
+                                        <div class="linkImage">
+                                        <a id="info">
+                                            <img class="navImage"  src="{{ asset("/images/picture.svg") }}">
+                                            <p>RAPPORT_AVALANCHE_Fino.png</p>
+                                        </a>
+                                        </div>
+                                        <div class="linkImage">
+                                        <a>
+                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">
+                                            <p>Champs_Actuel.png</p>
+                                        </a>
+                                        </div>
+                                        <div class="linkImage">
+                                        <a>
+                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">
+                                            <p>Media_Monde.png</p>
+                                        </a>
+                                        </div>
+                                        <div class="linkImage">
+                                        <a><img class="navImage" src="{{ asset("/images/picture.svg") }}">
+                                            <p>News_France.png</p>
+                                        </a>
+                                        </div>
 
-                            <main class="main-content">
-                                <h1>Main Content</h1>
-                            </main>
+                                    </div>
+                                <div class="col-lg-6 nav3">
+                                    <img class="img-thumbnail" src="{{ asset("/images/C.A.T_RAPPORT_AVALANCHE_FINO.png") }}">
+                                    <p class="text-center">Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                    <p class="text-center">Image PNG - 415 Ko</p>
+                                </div>
+
+                            </div>
                         </div>
 
                         <div class="modal-footer">
@@ -147,11 +89,12 @@
             <div class="modal fade" id="dossierVideo" tabindex="-1" aria-labelledby="dossierVideo" aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <img class="" src="{{ asset("/images/tableau.svg") }}">
+
+                        <div class="modal-header py-0 px-16">
+                            <img class="" src="{{ asset("/images/video.svg") }}">
+                            <h3 class="mx-2 pt-2">Dossier Videos</h3>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-
                         <div class="modal-body">
                             ...
                         </div>
