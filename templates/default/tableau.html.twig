@@ -1,0 +1,127 @@
+{% extends 'baseTableau.html.twig' %}
+
+
+{% block body %}
+
+
+    <body>
+
+
+    <div id="modal">
+        <div id="inner_modal">
+
+            <textarea placeholder="Veuillez entrer votre texte..." id="user_input" maxlength="110" class="pt-5"></textarea>
+            <i class="far fa-times-circle" id="hide"></i>
+            <i class="bi bi-check-circle" id="check-icon"></i>
+
+            <section class="" id="all-icone">
+
+                <div class="flex-box">
+                    <div class="row">
+                        <div class="col">
+
+                            <button type="button"
+                                    onclick="f1()"
+                                    class=" shadow-sm btn btn-outline-secondary"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Bold Text">
+                                <i class="bi bi-type-bold"></i></button>
+                            <button type="button"
+                                    onclick="f2()"
+                                    class="shadow-sm btn btn-outline-success"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Italic Text">
+                                <i class="bi bi-type-italic"></i></button>
+                            <button type="button"
+                                    onclick="f3()"
+                                    class=" shadow-sm btn btn-outline-primary"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Left Align">
+                                <i class="bi bi-justify-left"></i></button>
+                            <button type="button"
+                                    onclick="f4()"
+                                    class="btn shadow-sm btn-outline-secondary"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Center Align">
+                                <i class="bi bi-justify"></i></button>
+                            <button type="button"
+                                    onclick="f5()"
+                                    class="btn shadow-sm btn-outline-primary"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Right Align">
+                                <i class="bi bi-justify-right"></i></button>
+                            <button type="button"
+                                    onclick="f6()"
+                                    class="btn shadow-sm btn-outline-secondary"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Uppercase Text">
+                                AA</button>
+                            <button type="button"
+                                    onclick="f7()"
+                                    class="btn shadow-sm btn-outline-primary"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Lowercase Text">
+                                aa</button>
+                            <button type="button"
+                                    onclick="f8()"
+                                    class="btn shadow-sm btn-outline-primary"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Capitalize Text">
+                                Aa</button>
+                            <button type="button"
+                                    onclick="f10()"
+                                    class="btn shadow-sm btn-outline-primary"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Image"
+                                    data-element="insertImage">
+                                <i class="fa fa-image"></i></button>
+                            <button type="button"
+                                    onclick="f9()"
+                                    class="btn shadow-sm btn-outline-primary side"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Clear">
+                                <i class="bi bi-eraser"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <main>
+
+
+        <section >
+            <div class="container" id="set">
+                <div class="ui-widget-content" >
+                    <div id="all_notes"></div>
+                </div>
+            </div>
+            <button class="add_note">AJOUTER POST-IT</button>
+
+        </section>
+
+
+    </main>
+
+
+
+
+
+    </body>
+
+
+
+
+{% endblock %}

@@ -5,6 +5,9 @@
 {% block body %}
 <div class="container-fluid">
     <div class="row">
+
+
+
         <div class="col-lg-2 dispo">
 
             <!-- Button Image -->
@@ -168,7 +171,7 @@
             </div>
 
             <div class="col-lg-1 d-flex justify-content-between px-0">
-                <!-- Button trigger modal -->
+                <!-- Button tableau-->
                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img class="" src="{{ asset("/images/tableau.svg") }}">
                 </button>
@@ -182,7 +185,7 @@
                             </div>
 
                             <div class="modal-body">
-                                ...
+                                {{ include('default/tableau.html.twig') }}
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -191,7 +194,7 @@
                     </div>
                 </div>
 
-                <!-- Button trigger modal -->
+                <!-- Button RATP -->
                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                     <img class="" src="{{ asset("/images/ratp2.svg") }}">
                 </button>

@@ -23,4 +23,12 @@ class DefaultController extends AbstractController
 
         ]);
     }
+
+    #[Route('/tableau', name: 'tableau')]
+    public function tableau(): Response
+    {
+        return $this->render('default/tableau.html.twig', [
+
+        ]);
+    }
 }

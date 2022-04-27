@@ -58,7 +58,11 @@ footer{
 
 .dispo{
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
+
+
 /*.dossier1{*/
 /*    position: absolute;*/
 /*    width: 270px;*/
