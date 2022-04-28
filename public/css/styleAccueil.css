@@ -123,7 +123,9 @@ a{
 }
 
 .modal-content{
-    height: 800px !important;
+    width: 1900px !important;
+    height: 950px !important;
+    margin-left: 10px;
 }
 
 .metro1{
@@ -150,10 +152,6 @@ a{
     border-radius: 30% 30% 10% 10%;
 }
 
-.modal-content{
-    max-height: 100% !important;
-    max-width: 100% !important;
-}
 .navDossier{
     max-height: 100% !important;
     max-width: 100% !important;

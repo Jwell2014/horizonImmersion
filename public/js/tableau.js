@@ -2,12 +2,15 @@
 // Tableaux constituer de margin, colors et degrés.
 let random_margin = ["-5px", "1px", "5px", "10px", "7px"];
 let random_colors = [
-	"#c2ff3d",
-	"#ff3de8",
-	"#3dc2ff",
-	"#04e022",
-	"#bc83e6",
-	"#ebb328",
+	'lightgoldenrodyellow',
+	'lightblue',
+	'lightgreen',
+	'lightpink',
+	'lightcoral',
+	'lightskyblue',
+	'lightsalmon',
+	'plum',
+	'lightseagreen'
 ];
 let random_degree = [
 	"rotate(3deg)",
@@ -19,6 +22,28 @@ let random_degree = [
 ];
 let index = 0;
 
+// Variable pour gerer le zoom du tableau AU CLICK
+
+const tab = document.getElementById('set');
+const img = document.getElementById('all_notes');
+
+
+tab.addEventListener("dblclick", (e) => {
+	const x = e.clientX - e.target.offsetLeft;
+	const y = e.clientY - e.target.offsetTop;
+
+	console.log(x,y);
+
+	tab.style.transformOrigin = `${x}px ${y}px`;
+	tab.style.transform = "scale(2)";
+});
+
+tab.addEventListener("mouseleave", () =>{
+	tab.style.transformOrigin = "center";
+	tab.style.transform = "scale(1)";
+})
+
+
 
 
 document.onmousedown = clearMenus;
@@ -29,6 +54,8 @@ window.onload = document.querySelector("#user_input").select();
 document.querySelector(".add_note").addEventListener("click", () => {
 	document.querySelector("#modal").style.display = "block";
 	document.getElementById("user_input").style.width = "276px";
+	document.getElementById("user_input").style.height = "276px";
+	document.getElementById("user_input").style.fontSize = "20px";
 
 });
 
@@ -101,8 +128,14 @@ createStickyNote = (text, style) => {
 	let noteText = document.createElement("textarea");
 	noteText.textContent = text;
 
-	document.getElementById("user_input").style.width = "160px";
+	document.getElementById("user_input").style.width = "60px";
+	document.getElementById("user_input").style.height = "50px";
+	document.getElementById("user_input").style.fontSize = "10px";
+
 	noteText.style.width = style.width
+	noteText.style.height = style.height
+	noteText.style.fontSize = style.fontSize
+
 	noteText.style.fontWeight = style.fontWeight
 	noteText.style.fontStyle = style.fontStyle
 	noteText.style.textAlign = style.textAlign
@@ -153,6 +186,9 @@ createStickyNote = (text, style) => {
 	}
 
 }
+
+// Zoom sur le tableau
+
 
 /**
  noteMenu crée le menu des options de la note.
