@@ -12,7 +12,7 @@ body{
 }
 
 button{
-  padding: 6px;
+  padding: 4px !important;
   outline: none;
   cursor: pointer;
   font-family: inherit;
@@ -27,7 +27,9 @@ button:hover{
 }
 
 #modal{
-  position: fixed;
+  position: absolute;
+  display: flex;
+
   z-index: 100000;
   /*width: 100%;*/
   /*min-height: 100vh;*/
@@ -37,10 +39,15 @@ button:hover{
 
 #inner_modal{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  flex-direction: column;
+  min-height: 75vh;
+  justify-content: flex-end;
+}
 
+.icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #inner_modal textarea{
@@ -69,16 +76,14 @@ button:hover{
   font-size: 1.4rem;
   color: red;
   cursor: pointer;
-  margin-top: -240px;
-  margin-left: -35px;
+
 }
 
 #check-icon{
   font-size: 1.4rem;
   color: green;
   cursor: pointer;
-  margin-top: -236px;
-  margin-left: -55px;
+
 
 }
 
@@ -93,10 +98,10 @@ button:hover{
 
 #set {
   width: auto;
-  height: 723px;
+  height: 805px;
   margin: auto;
   overflow: hidden;
-  border: 2px solid;
+
   background-image: url("../images/Fondtableau.svg");
   background-size: cover;
 }
@@ -160,8 +165,8 @@ button:hover{
 #all-icone{
   font-size: 0.5rem;
   cursor: pointer;
-  margin-top: 282px;
-  margin-left: -275px;
+  display: flex;
+  justify-content: center;
 
 }
 
