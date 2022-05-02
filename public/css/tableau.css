@@ -26,6 +26,7 @@ button:hover{
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+
 #modal{
   position: absolute;
   display: flex;
@@ -101,7 +102,7 @@ button:hover{
   height: 805px;
   margin: auto;
   overflow: hidden;
-
+  border-radius: 10px;
   background-image: url("../images/Fondtableau.svg");
   background-size: cover;
 }
