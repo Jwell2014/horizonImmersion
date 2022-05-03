@@ -26,6 +26,11 @@ document.querySelector('#dossierImage').addEventListener('hidden.bs.modal', () =
     btn2.classList.remove('active');
 });
 
+
+// script pour le bouton apli tableau et ratp
+
+
+
 /*
 // Permet de supprimer toute les fenetre ouverte lors de la fermeture de la modal
 document.querySelector('.ferm').addEventListener('click', () => {
@@ -52,6 +57,10 @@ let minute = 59;
 let second = 55;
 let millisecond = 0;
 
+let h = 11;
+let m = 59;
+let s = 55;
+
 let cron;
 
 document.form_main.start.onclick = () => start();
@@ -74,27 +83,59 @@ function reset() {
     minute = 59;
     second = 55;
     millisecond = 0;
+
+    h = 11;
+    m = 59;
+    s = 55;
+
     document.getElementById('hour').innerText = '11';
     document.getElementById('minute').innerText = '59';
     document.getElementById('second').innerText = '55';
+
+    document.getElementById('h').innerText = '11';
+    document.getElementById('m').innerText = '59';
+    document.getElementById('s').innerText = '55';
+
+
 }
 
 function timer() {
+
+
     if ((millisecond += 10) === 1000) {
         millisecond = 0;
         second++;
+        s++;
     }
-    if (second === 60) {
+    if (second === 60 && s === 60) {
         second = 0;
+        s = 0;
+
+        m++;
         minute++;
+
     }
-    if (minute === 60) {
+    if (minute === 60 && m === 60) {
         minute = 0;
+        m = 0;
+
+        h++;
         hour++;
+
     }
+
+
+
+
     document.getElementById('hour').innerText = returnData(hour);
     document.getElementById('minute').innerText = returnData(minute);
     document.getElementById('second').innerText = returnData(second);
+
+    document.getElementById('h').innerText = returnData(h);
+    document.getElementById('m').innerText = returnData(m);
+    document.getElementById('s').innerText = returnData(s);
+
+
 }
 
 function returnData(input) {
