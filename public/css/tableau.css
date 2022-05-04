@@ -16,6 +16,7 @@ body{
   outline: none;
   cursor: pointer;
   font-family: inherit;
+  height: 55px;
 }
 
 .btnApli:hover{

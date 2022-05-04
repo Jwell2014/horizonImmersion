@@ -3,7 +3,7 @@
 {% block title %}Hello DefaultController!{% endblock %}
 
 {% block body %}
-<div class="container-fluid">
+<div class="container-fluid" id="main">
     <div class="row">
 
 
@@ -203,7 +203,7 @@
 
 
     </div>
-</div>
+
 
 
 <footer>
@@ -459,10 +459,61 @@
 
             </div>
             <div class="col-lg-5 d-flex justify-content-around pt-2">
-                <a href=""><img class="pt-1" src="{{ asset("/images/battery.svg") }}" title="Batterie 90%"></a>
-                <a href="{{ path('chat') }}"><img src="{{ asset("/images/logoChat.svg") }}" title="CHAT"></a>
-                <a href=""><img src="{{ asset("/images/temps.svg") }}" title="Temps nuageux"></a>
-                <a href=""><img src="{{ asset("/images/wifi.svg") }}" title="WIFI activé"></a>
+
+                {#Button de bettery#}
+                <a href="">
+                    <img class="pt-1" src="{{ asset("/images/battery.svg") }}" title="Batterie 90%">
+                </a>
+
+                {#Button de meteo#}
+                <a href="">
+                    <img src="{{ asset("/images/temps.svg") }}" title="Temps nuageux">
+                </a>
+
+                {#Button de wifi#}
+                <a href="">
+                    <img src="{{ asset("/images/wifi.svg") }}" title="WIFI activé">
+                </a>
+
+                {# Button ouverture du chat#}
+                <a href="#" role="button" data-target="#modalChat" data-toggle="modalChat">
+                    <img src="{{ asset("/images/logoChat.svg") }}" title="CHAT">
+                </a>
+
+                {#Modal Chat#}
+                <div class="modalChat" id="modalChat" role="dialog">
+                    <div class="modalChat-content">
+                        <div class="modalChat-close" data-dismiss="dialog">
+                            X
+                        </div>
+                        <div class="modalChat-header">
+                            <h3>Messenger</h3>
+                        </div>
+                        <div class="modalChat-body">
+                            <h3 class="smsR">sms</h3>
+                            <h3 class="smsL">sms</h3>
+                            <h3 class="smsR">sms</h3>
+                            <h3 class="smsL">sms</h3>
+                            <h3 class="smsL">sms</h3>
+                            <h3 class="smsR">sms</h3>
+                            <h3 class="smsR">sms</h3>
+                            <h3 class="smsL">sms</h3>
+                            <h3 class="smsL">sms</h3>
+                            <h3 class="smsR">sms</h3>
+                            <h3 class="smsL">sms</h3>
+                            <h3 class="smsR">sms</h3>
+                            <h3 class="smsR">sms</h3>
+                            <h3 class="smsL">sms</h3>
+                            <h3 class="smsL">sms</h3>
+                        </div>
+                        <div class="modalChat-footer">
+                            <h3 class="smsText">Ecrivez votre message...</h3>
+                            <button type="button" class="smsEnvoi">envoi</button>
+                        </div>
+                    </div>
+                </div>
+
+                {#horloge#}
                 <a href="" class="heure">
                     <span id="h">11</span>
                     <span class="colon"> : </span>
@@ -470,8 +521,11 @@
                     <span class="colon"> : </span>
                     <span id="s">55</span>
                 </a>
+                {#logo entreprise#}
+                <a href="">
+                    <img id="imgLogoBleu" src="{{ asset("/images/HIlogoPtit.svg") }}">
+                </a>
 
-                <a href=""><img src="{{ asset("/images/HIlogoPtit.svg") }}"></a>
             </div>
 
         </div>
@@ -480,6 +534,6 @@
 </footer>
 
 
-
+</div>
 
 {% endblock %}
