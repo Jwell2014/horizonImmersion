@@ -160,7 +160,7 @@ createStickyNote = (text, style) => {
 
 	// Permet au survol de la souris d'agrandir le post-it
 	note.addEventListener("mouseenter", function () {
-		note.style.transform = "scale(2)";
+		note.style.transform = "scale(1.2)";
 	});
 
 	// Permet au depart de la souris de rétrécir le post-it
