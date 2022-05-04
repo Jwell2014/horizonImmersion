@@ -137,7 +137,6 @@ a{
 .btn-grad {background-image: linear-gradient(to right, #000000 0%, #e74c3c  51%, #000000  100%)}
 .btn-grad {
     margin: 10px;
-    padding: 15px 45px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
@@ -215,6 +214,10 @@ height: 800px;
     border: 1px solid rgba(0,0,0,.2);
     border-radius: .3rem;
     outline: 0;
+}
+
+.col button {
+    padding: 4px;
 }
 
 .metro1{
