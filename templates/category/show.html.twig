@@ -7,24 +7,27 @@
 
     <h1 class="titreCateg">Category</h1>
 
-       <div class="row categDispo">
-           <div class="col-lg-6 border">
-               <img class="img-thumbnail w-25" src="{{ asset('images/category/' ~ category.image) }}">
-           </div>
 
-           <div class="col-lg-6 border">
-               <td>{{ category.Nom }}</td>
-           </div>
+    <div class="contentCateg">
+               <img class="imgCateg" src="{{ asset('images/category/' ~ category.image) }}">
 
-       </div>
+        <p class="pCateg">{{ category.Nom }}</p>
+
+    </div>
 
 
 
-    <a href="{{ path('category_index') }}">back to list</a>
 
-    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
 
-    {{ include('category/_delete_form.html.twig') }}
+<div class="buttonCateg">
+    <button class="btn btn-primary"><a href="{{ path('category_index') }}">back to list</a></button>
+
+    <button class="btn btn-success"><a href="{{ path('category_edit', {'id': category.id}) }}">edit</a></button>
+
+  {{ include('category/_delete_form.html.twig') }}
+
+</div>
+
 
     </div>
 {% endblock %}
