@@ -18,17 +18,11 @@
     {% else %}
         {{ form_row(form.image, {'required': true}) }}
     {% endif %}
-
         <ul id="image-fields-list"
 
             data-widget-tags="{{ '<li></li>'|e }}"
             data-widget-counter="{{ form.image|length }}">
-            {% for imageField in form.image %}
-                <li>
-                    {# {{ form_errors(emailField) }}
-            {{ form_widget(emailField) }}#}
-                </li>
-            {% endfor %}
+
         </ul>
 
         <button type="button"

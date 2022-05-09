@@ -21,6 +21,7 @@ class CategoryType extends AbstractType
             ]  )
             ->add('image', FileType::class, [
                 'data_class' => null,
+                'attr'=> [ 'class'=> 'form-control'],
                 'required'=> false,
                 'constraints'=> [
                     new File([
