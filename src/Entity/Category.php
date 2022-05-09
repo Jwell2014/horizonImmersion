@@ -14,67 +14,63 @@ class Category
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $Images;
+    private $nom;
+
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $Videos;
+    private $image;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $Archives;
-
-    #[ORM\Column(type: 'string', length: 255)]
-    private $Enigmes;
-
-    public function getId(): ?int
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getImages(): ?string
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
     {
-        return $this->Images;
+        $this->id = $id;
     }
 
-    public function setImages(string $Images): self
+    /**
+     * @return mixed
+     */
+    public function getNom()
     {
-        $this->Images = $Images;
-
-        return $this;
+        return $this->nom;
     }
 
-    public function getVideos(): ?string
+    /**
+     * @param mixed $nom
+     */
+    public function setNom($nom): void
     {
-        return $this->Videos;
+        $this->nom = $nom;
     }
 
-    public function setVideos(string $Videos): self
+    /**
+     * @return mixed
+     */
+    public function getImage()
     {
-        $this->Videos = $Videos;
-
-        return $this;
+        return $this->image;
     }
 
-    public function getArchives(): ?string
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
     {
-        return $this->Archives;
+        $this->image = $image;
     }
 
-    public function setArchives(string $Archives): self
-    {
-        $this->Archives = $Archives;
 
-        return $this;
-    }
 
-    public function getEnigmes(): ?string
-    {
-        return $this->Enigmes;
-    }
 
-    public function setEnigmes(string $Enigmes): self
-    {
-        $this->Enigmes = $Enigmes;
 
-        return $this;
-    }
+
 }
