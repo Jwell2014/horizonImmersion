@@ -77,12 +77,37 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'category_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Category $category, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Category $category, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(CategoryType::class, $category);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            //on récupère notre photo dans la requete image correspondant au nom du champ dans notre formulaire
+            $imageCategory = $form->get('image')->getData();
+
+            if ($imageCategory){
+                //Génération d'un nouveau nom sécurisé et unique
+                $originalFilename = pathinfo($imageCategory->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageCategory->guessExtension();
+
+
+                // j'upload le fichier dans le dossier contenu dans services.yaml qui a la clé product.image
+                // Je l'upload avec son  ouveau nom
+                $imageCategory->move(
+                    $this->getParameter('category_image'),
+                    $newFilename
+                );
+
+                //Dans ma BDD j'ajoute e nom unique du fichier pour le trouver
+                $category->setImage($newFilename);
+
+            }
+
+
             $entityManager->flush();
 
             return $this->redirectToRoute('category_index', [], Response::HTTP_SEE_OTHER);
@@ -92,6 +117,8 @@ class CategoryController extends AbstractController
             'category' => $category,
             'form' => $form,
         ]);
+
+
     }
 
     #[Route('/{id}', name: 'category_delete', methods: ['POST'])]
