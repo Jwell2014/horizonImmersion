@@ -12,6 +12,8 @@
     border-radius: 1.25rem;
     max-width: 24%;
     height: auto;
+    position: relative;
+    left: 35%;
 }
 
 .buttonCateg {
@@ -20,7 +22,7 @@
     background-color: #fff;
     padding: 10px;
     border-radius: 20px
-
+    margin: 50px;
 }
 
 .buttonCateg a{
@@ -44,4 +46,5 @@
     position: relative;
     margin-bottom: 50px;
 }
+
 

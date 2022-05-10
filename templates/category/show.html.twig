@@ -19,10 +19,11 @@
 
 
 
-<div class="buttonCateg">
-    <button class="btn btn-primary"><a href="{{ path('category_index') }}">back to list</a></button>
 
-    <button class="btn btn-success"><a href="{{ path('category_edit', {'id': category.id}) }}">edit</a></button>
+<div class="buttonCateg">
+    <button class="btn btn-secondary"><a href="{{ path('category_index') }}">back to list</a></button>
+
+    <button class="btn btn-warning"><a href="{{ path('category_edit', {'id': category.id}) }}">edit</a></button>
 
   {{ include('category/_delete_form.html.twig') }}
 
