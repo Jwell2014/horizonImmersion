@@ -5,7 +5,6 @@
 
     {{ form_row(form.nom) }}
 
-
     {% if category is defined %}
 
         <div class="border-1">
@@ -18,18 +17,6 @@
     {% else %}
         {{ form_row(form.image, {'required': true}) }}
     {% endif %}
-        <ul id="image-fields-list"
-
-            data-widget-tags="{{ '<li></li>'|e }}"
-            data-widget-counter="{{ form.image|length }}">
-
-        </ul>
-
-        <button type="button"
-                class="addImage"
-                data-list-selector="#image-fields-list">
-            Ajouter une image
-        </button>
 
 
     {{ form_end(form) }}

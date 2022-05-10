@@ -7,6 +7,7 @@
     <div class="container">
         <h1 class="text-center my-5 text-decoration-underline">Tableau des Categories</h1>
 
+        <button class="float-start my-5 pt-4 btn btn-outline-dark "><a href="{{ path('app_default') }}" class="text-decoration-none">Retour a l'accueil</a></button>
         <button class="float-end my-5 pt-4 btn btn-outline-dark "><a href="{{ path('category_new') }}" class="text-decoration-none">Créer un nouveau produit</a></button>
 
 
@@ -27,7 +28,7 @@
                     <td>{{ category.id }}</td>
                     <td>{{ category.nom }}</td>
                     <td><img class="img-thumbnail w-25" src="{{ asset('images/category/' ~ category.image) }}"></td>
-                    <td>
+                    <td class="btnAction">
                         <a class="btn btn-info" href="{{ path('category_show', {'id': category.id}) }}">Voir</a>
                         <a class="btn btn-warning" href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
                     </td>

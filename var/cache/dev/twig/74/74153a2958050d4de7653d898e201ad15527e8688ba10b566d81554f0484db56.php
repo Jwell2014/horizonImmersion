@@ -98,7 +98,7 @@ class __TwigTemplate_844fbd807185e8cfe9223e6eab43ae3d4c52759477929d08e8b900620b9
 
         <p class=\"pCateg\">";
         // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 14, $this->source); })()), "Nom", [], "any", false, false, false, 14), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 14, $this->source); })()), "nom", [], "any", false, false, false, 14), "html", null, true);
         echo "</p>
 
     </div>
@@ -112,7 +112,7 @@ class __TwigTemplate_844fbd807185e8cfe9223e6eab43ae3d4c52759477929d08e8b900620b9
     <button class=\"btn btn-secondary\"><a href=\"";
         // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
-        echo "\">back to list</a></button>
+        echo "\">Retour</a></button>
 
     <button class=\"btn btn-warning\"><a href=\"";
         // line 26
@@ -167,7 +167,7 @@ class __TwigTemplate_844fbd807185e8cfe9223e6eab43ae3d4c52759477929d08e8b900620b9
     <div class=\"contentCateg\">
                <img class=\"imgCateg\" src=\"{{ asset('images/category/' ~ category.image) }}\">
 
-        <p class=\"pCateg\">{{ category.Nom }}</p>
+        <p class=\"pCateg\">{{ category.nom }}</p>
 
     </div>
 
@@ -177,7 +177,7 @@ class __TwigTemplate_844fbd807185e8cfe9223e6eab43ae3d4c52759477929d08e8b900620b9
 
 
 <div class=\"buttonCateg\">
-    <button class=\"btn btn-secondary\"><a href=\"{{ path('category_index') }}\">back to list</a></button>
+    <button class=\"btn btn-secondary\"><a href=\"{{ path('category_index') }}\">Retour</a></button>
 
     <button class=\"btn btn-warning\"><a href=\"{{ path('category_edit', {'id': category.id}) }}\">edit</a></button>
 

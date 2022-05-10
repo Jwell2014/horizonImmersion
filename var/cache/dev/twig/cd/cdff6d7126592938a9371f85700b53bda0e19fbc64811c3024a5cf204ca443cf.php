@@ -89,8 +89,12 @@ class __TwigTemplate_108a15b0268202bea0b9cf1fcdef0d232aada810d22ff845e1888b10f34
     <div class=\"container\">
         <h1 class=\"text-center my-5 text-decoration-underline\">Tableau des Categories</h1>
 
-        <button class=\"float-end my-5 pt-4 btn btn-outline-dark \"><a href=\"";
+        <button class=\"float-start my-5 pt-4 btn btn-outline-dark \"><a href=\"";
         // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_default");
+        echo "\" class=\"text-decoration-none\">Retour a l'accueil</a></button>
+        <button class=\"float-end my-5 pt-4 btn btn-outline-dark \"><a href=\"";
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_new");
         echo "\" class=\"text-decoration-none\">Créer un nouveau produit</a></button>
 
@@ -106,35 +110,35 @@ class __TwigTemplate_108a15b0268202bea0b9cf1fcdef0d232aada810d22ff845e1888b10f34
             </thead>
             <tbody>
             ";
-        // line 23
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 24, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 24
+            // line 25
             echo "
 
                 <tr>
                     <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 27), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
                     <td>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nom", [], "any", false, false, false, 28), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nom", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
                     <td><img class=\"img-thumbnail w-25\" src=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/category/" . twig_get_attribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 29))), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/category/" . twig_get_attribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 30))), "html", null, true);
             echo "\"></td>
-                    <td>
+                    <td class=\"btnAction\">
                         <a class=\"btn btn-info\" href=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_show", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 31)]), "html", null, true);
-            echo "\">show</a>
-                        <a class=\"btn btn-warning\" href=\"";
             // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_show", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            echo "\">Voir</a>
+                        <a class=\"btn btn-warning\" href=\"";
+            // line 33
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 33)]), "html", null, true);
             echo "\">edit</a>
                     </td>
                 </tr>
@@ -142,16 +146,16 @@ class __TwigTemplate_108a15b0268202bea0b9cf1fcdef0d232aada810d22ff845e1888b10f34
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 36
+            // line 37
             echo "                <tr>
-                    <td colspan=\"5\">no records found</td>
+                    <td colspan=\"5\">Aucun fichier trouver</td>
                 </tr>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 41
         echo "            </tbody>
         </table>
 
@@ -177,7 +181,7 @@ class __TwigTemplate_108a15b0268202bea0b9cf1fcdef0d232aada810d22ff845e1888b10f34
 
     public function getDebugInfo()
     {
-        return array (  155 => 40,  146 => 36,  137 => 32,  133 => 31,  128 => 29,  124 => 28,  120 => 27,  115 => 24,  110 => 23,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  159 => 41,  150 => 37,  141 => 33,  137 => 32,  132 => 30,  128 => 29,  124 => 28,  119 => 25,  114 => 24,  98 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -191,6 +195,7 @@ class __TwigTemplate_108a15b0268202bea0b9cf1fcdef0d232aada810d22ff845e1888b10f34
     <div class=\"container\">
         <h1 class=\"text-center my-5 text-decoration-underline\">Tableau des Categories</h1>
 
+        <button class=\"float-start my-5 pt-4 btn btn-outline-dark \"><a href=\"{{ path('app_default') }}\" class=\"text-decoration-none\">Retour a l'accueil</a></button>
         <button class=\"float-end my-5 pt-4 btn btn-outline-dark \"><a href=\"{{ path('category_new') }}\" class=\"text-decoration-none\">Créer un nouveau produit</a></button>
 
 
@@ -211,14 +216,14 @@ class __TwigTemplate_108a15b0268202bea0b9cf1fcdef0d232aada810d22ff845e1888b10f34
                     <td>{{ category.id }}</td>
                     <td>{{ category.nom }}</td>
                     <td><img class=\"img-thumbnail w-25\" src=\"{{ asset('images/category/' ~ category.image) }}\"></td>
-                    <td>
-                        <a class=\"btn btn-info\" href=\"{{ path('category_show', {'id': category.id}) }}\">show</a>
+                    <td class=\"btnAction\">
+                        <a class=\"btn btn-info\" href=\"{{ path('category_show', {'id': category.id}) }}\">Voir</a>
                         <a class=\"btn btn-warning\" href=\"{{ path('category_edit', {'id': category.id}) }}\">edit</a>
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan=\"5\">no records found</td>
+                    <td colspan=\"5\">Aucun fichier trouver</td>
                 </tr>
             {% endfor %}
             </tbody>

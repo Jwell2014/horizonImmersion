@@ -4,7 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Form\CategoryType;
-use App\Repository\CategoryRepository;
+
+
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -86,23 +87,23 @@ class CategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             //on récupère notre photo dans la requete image correspondant au nom du champ dans notre formulaire
-            $imageCategory = $form->get('image')->getData();
+            $image = $form->get('image')->getData();
 
-            if ($imageCategory){
+            if ($image){
                 //Génération d'un nouveau nom sécurisé et unique
-                $originalFilename = pathinfo($imageCategory->getClientOriginalName(), PATHINFO_FILENAME);
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageCategory->guessExtension();
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
 
 
-                // j'upload le fichier dans le dossier contenu dans services.yaml qui a la clé product.image
+                // j'upload le fichier dans le dossier contenu dans services.yaml qui a la clé category.image
                 // Je l'upload avec son  ouveau nom
-                $imageCategory->move(
+                $image->move(
                     $this->getParameter('category_image'),
                     $newFilename
                 );
 
-                //Dans ma BDD j'ajoute e nom unique du fichier pour le trouver
+                //Dans ma BDD j'ajoute un nom unique du fichier pour le trouver
                 $category->setImage($newFilename);
 
             }

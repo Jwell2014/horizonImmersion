@@ -20,9 +20,9 @@ class CategoryType extends AbstractType
                 'attr'=> [ 'class'=> 'form-control'],
             ]  )
             ->add('image', FileType::class, [
-                'data_class' => null,
-                'attr'=> [ 'class'=> 'form-control'],
+                'mapped'=> false,
                 'required'=> false,
+                'attr'=> [ 'class'=> 'form-control'],
                 'constraints'=> [
                     new File([
 
@@ -31,8 +31,8 @@ class CategoryType extends AbstractType
                             'image/png',
                             'image/svg+xml',
                         ],
-                        'mimeTypesMessage'=> 'Veuillez télécharger une image JPG ou PNG'
-                    ])
+                        'mimeTypesMessage'=> 'Veuillez télécharger une image JPG ou PNG',
+                    ]),
                 ],
 
             ])
