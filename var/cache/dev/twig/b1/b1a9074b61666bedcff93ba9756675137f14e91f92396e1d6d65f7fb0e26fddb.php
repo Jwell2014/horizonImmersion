@@ -101,21 +101,14 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
             // line 15
             echo "
             <!-- Button Image -->
-            <a type=\"button\" class=\"btn dossier1\" data-bs-toggle=\"modal\" data-bs-target=\"#dossierImage\" href=\"";
-            // line 17
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_show", ["id" => twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 17)]), "html", null, true);
-            echo " src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/dossier.svg"), "html", null, true);
-            echo "\">
-                <img class=\"pt-5\" src=\"";
+            <button type=\"button\" class=\"btn dossier1\" data-bs-toggle=\"modal\" data-bs-target=\"#dossierImage\">
+                <img class=\"\" src=\"";
             // line 18
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/dossier.svg"), "html", null, true);
             echo "\">
-                <p class=\"text1\">";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nom", [], "any", false, false, false, 19), "html", null, true);
-            echo "</p>
-            </a>
+";
+            // line 20
+            echo "            </button>
             ";
         }
         $_parent = $context['_parent'];
@@ -124,56 +117,131 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
         // line 22
         echo "
              <!-- Modal Images -->
-            ";
-        // line 24
-        echo twig_include($this->env, $context, "default/categoryShow.html.twig");
+
+            <div class=\"modal fade\" id=\"dossierImage\" tabindex=\"-1\" aria-labelledby=\"dossierImage\" aria-hidden=\"true\">
+                <div class=\"modal-dialog modal-xl\">
+                    <div class=\"modal-content\" style=\"margin-top: 125px\">
+
+
+
+                        <div class=\"modal-header py-0 px-16\">
+                            <img class=\"\" src=\"";
+        // line 32
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/category/"), "html", null, true);
+        echo "\">
+                            <h3 class=\"mx-2 pt-2\">Dossier</h3>
+                            <button type=\"button\" class=\"btn-close ferm\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                        </div>
+
+
+
+                        <div class=\"modal-body container\">
+
+                            <div class=\"row\">
+                                <div class=\"col-lg-2\">
+
+                                    ";
+        // line 44
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 44, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 45
+            echo "                                    <img class=\"navDossier active\" id=\"docImg\" src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/dossier.svg"), "html", null, true);
+            echo "\">
+                                    <p class=\"text-center\">";
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nom", [], "any", false, false, false, 46), "html", null, true);
+            echo "</p>
+                                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 48
+        echo "
+                                </div>
+
+
+                                <div class=\"col-lg-4 nav2 visible\">
+                                    <div class=\"linkImage\">
+                                        <a>
+                                            <img  class=\"navImage\" src=\"";
+        // line 55
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
+        echo "\">
+                                            <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                        </a>
+                                    </div>
+                                    <div class=\"linkImage\">
+                                        <a id=\"info\">
+                                            <img class=\"navImage\"  src=\"";
+        // line 61
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
+        echo "\">
+                                            <p>RAPPORT_AVALANCHE_Fino.png</p>
+                                        </a>
+                                    </div>
+                                    <div class=\"linkImage\">
+                                        <a>
+                                            <img class=\"navImage\" src=\"";
+        // line 67
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
+        echo "\">
+                                            <p>Champs_Actuel.png</p>
+                                        </a>
+                                    </div>
+                                    <div class=\"linkImage\">
+                                        <a>
+                                            <img class=\"navImage\" src=\"";
+        // line 73
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
+        echo "\">
+                                            <p>Media_Monde.png</p>
+                                        </a>
+                                    </div>
+                                    <div class=\"linkImage\">
+                                        <a><img class=\"navImage\" src=\"";
+        // line 78
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
+        echo "\">
+                                            <p>News_France.png</p>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class=\"col-lg-6 nav3\">
+                                    <img class=\"img-thumbnail\" src=\"";
+        // line 85
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/C.A.T_RAPPORT_AVALANCHE_FINO.png"), "html", null, true);
+        echo "\">
+                                    <p class=\"text-center\">Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                    <p class=\"text-center\">Image PNG - 415 Ko</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class=\"modal-footer\">
+                            <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+";
+        // line 110
+        echo "
+";
+        // line 125
         echo "
 
 ";
-        // line 29
-        echo "
-
-";
-        // line 36
-        echo "
-
-";
-        // line 39
+        // line 140
         echo "
 ";
-        // line 42
-        echo "
-";
-        // line 47
-        echo "
-";
-        // line 49
-        echo "
-";
-        // line 80
-        echo "
-";
-        // line 87
-        echo "
-";
-        // line 90
-        echo "
-";
-        // line 97
-        echo "
-
-";
-        // line 108
-        echo "
-";
-        // line 123
-        echo "
-
-";
-        // line 138
-        echo "
-";
-        // line 148
+        // line 150
         echo "
 
         </div>
@@ -184,7 +252,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
         <div class=\"col-lg-4\">
             <img class=\"imgCenter\" src=\"";
-        // line 157
+        // line 159
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/LogoNoir.png"), "html", null, true);
         echo "\">
         </div>
@@ -207,7 +275,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
             </div>
 
 ";
-        // line 190
+        // line 192
         echo "
             <div id=\"chrono\" class=\"col-lg-12 mx-auto\">
                 <form name=\"form_main\">
@@ -244,11 +312,11 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
             <div class=\"col-lg-2\">
                 <div class=\"rectangle\">
                     <a  href=\"";
-        // line 225
+        // line 227
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chat");
         echo "\">
                         <img src=\"";
-        // line 226
+        // line 228
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/logoRond.svg"), "html", null, true);
         echo "\">
                         <h5>CONTINUER</h5>
@@ -260,7 +328,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                 <!-- Button tableau-->
                 <button type=\"button\" class=\"btn btnApli\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">
                     <img class=\"\" src=\"";
-        // line 235
+        // line 237
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/tableau.svg"), "html", null, true);
         echo "\">
                 </button>
@@ -269,11 +337,11 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                     <div class=\"modal-dialog modal-xl mx-0\">
                         <div class=\"modal-content1\">
 ";
-        // line 245
+        // line 247
         echo "
                             <div class=\"modal-body\">
                                 ";
-        // line 247
+        // line 249
         echo twig_include($this->env, $context, "default/tableau.html.twig");
         echo "
                             </div>
@@ -287,7 +355,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                 <!-- Button RATP -->
                 <button type=\"button\" class=\"btn btnApli\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal2\">
                     <img class=\"\" src=\"";
-        // line 258
+        // line 260
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/ratp2.svg"), "html", null, true);
         echo "\">
                 </button>
@@ -297,7 +365,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                         <div class=\"modal-content\">
                             <div class=\"modal-header\">
                                 <img class=\"\" src=\"";
-        // line 265
+        // line 267
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/ratp2.svg"), "html", null, true);
         echo "\">
                                 <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
@@ -305,7 +373,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
                             <div class=\"modal-body\">
 ";
-        // line 440
+        // line 442
         echo "
 
                                 <div id=\"enigme\" class=\"container\">
@@ -325,7 +393,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
 
                                 <img class=\"metro1\" src=\"";
-        // line 458
+        // line 460
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/metro1.svg"), "html", null, true);
         echo "\">
                             </div>
@@ -343,43 +411,43 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
             <div class=\"col-lg-5 d-flex justify-content-around pt-2\">
 
                 ";
-        // line 474
+        // line 476
         echo "                <a href=\"\">
                     <img class=\"pt-1\" src=\"";
-        // line 475
+        // line 477
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/battery.svg"), "html", null, true);
         echo "\" title=\"Batterie 90%\">
                 </a>
 
                 ";
-        // line 479
+        // line 481
         echo "                <a href=\"\">
                     <img src=\"";
-        // line 480
+        // line 482
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/temps.svg"), "html", null, true);
         echo "\" title=\"Temps nuageux\">
                 </a>
 
                 ";
-        // line 484
+        // line 486
         echo "                <a href=\"\">
                     <img src=\"";
-        // line 485
+        // line 487
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/wifi.svg"), "html", null, true);
         echo "\" title=\"WIFI activé\">
                 </a>
 
                 ";
-        // line 489
+        // line 491
         echo "                <a href=\"#\" role=\"button\" data-target=\"#modalChat\" data-toggle=\"modalChat\">
                     <img src=\"";
-        // line 490
+        // line 492
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/logoChat.svg"), "html", null, true);
         echo "\" title=\"CHAT\">
                 </a>
 
                 ";
-        // line 494
+        // line 496
         echo "                <div class=\"modalChat\" id=\"modalChat\" role=\"dialog\">
                     <div class=\"modalChat-content\">
                         <div class=\"modalChat-close\" data-dismiss=\"dialog\">
@@ -413,7 +481,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                 </div>
 
                 ";
-        // line 527
+        // line 529
         echo "                <a href=\"\" class=\"heure\">
                     <span id=\"h\">11</span>
                     <span class=\"colon\"> : </span>
@@ -422,10 +490,10 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                     <span id=\"s\">55</span>
                 </a>
                 ";
-        // line 535
+        // line 537
         echo "                <a href=\"\">
                     <img id=\"imgLogoBleu\" src=\"";
-        // line 536
+        // line 538
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/HIlogoPtit.svg"), "html", null, true);
         echo "\">
                 </a>
@@ -461,7 +529,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
     public function getDebugInfo()
     {
-        return array (  429 => 536,  426 => 535,  417 => 527,  383 => 494,  377 => 490,  374 => 489,  368 => 485,  365 => 484,  359 => 480,  356 => 479,  350 => 475,  347 => 474,  329 => 458,  309 => 440,  301 => 265,  291 => 258,  277 => 247,  273 => 245,  264 => 235,  252 => 226,  248 => 225,  211 => 190,  188 => 157,  177 => 148,  174 => 138,  170 => 123,  167 => 108,  163 => 97,  160 => 90,  157 => 87,  154 => 80,  151 => 49,  148 => 47,  145 => 42,  142 => 39,  138 => 36,  134 => 29,  129 => 24,  125 => 22,  116 => 19,  112 => 18,  106 => 17,  102 => 15,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  497 => 538,  494 => 537,  485 => 529,  451 => 496,  445 => 492,  442 => 491,  436 => 487,  433 => 486,  427 => 482,  424 => 481,  418 => 477,  415 => 476,  397 => 460,  377 => 442,  369 => 267,  359 => 260,  345 => 249,  341 => 247,  332 => 237,  320 => 228,  316 => 227,  279 => 192,  256 => 159,  245 => 150,  242 => 140,  238 => 125,  235 => 110,  216 => 85,  206 => 78,  198 => 73,  189 => 67,  180 => 61,  171 => 55,  162 => 48,  154 => 46,  149 => 45,  145 => 44,  130 => 32,  118 => 22,  111 => 20,  107 => 18,  102 => 15,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -482,86 +550,88 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
             {% for category in categories %}
 
             <!-- Button Image -->
-            <a type=\"button\" class=\"btn dossier1\" data-bs-toggle=\"modal\" data-bs-target=\"#dossierImage\" href=\"{{ path('category_show', {'id': category.id}) }} src=\"{{ asset(\"/images/dossier.svg\") }}\">
-                <img class=\"pt-5\" src=\"{{ asset(\"/images/dossier.svg\") }}\">
-                <p class=\"text1\">{{ category.nom }}</p>
-            </a>
+            <button type=\"button\" class=\"btn dossier1\" data-bs-toggle=\"modal\" data-bs-target=\"#dossierImage\">
+                <img class=\"\" src=\"{{ asset(\"/images/dossier.svg\") }}\">
+{#                <a class=\"btn btn-info\" href=\"{{ path('voir', {'id': category.id}) }}\">{{ category.nom }}</a>#}
+            </button>
             {% endfor %}
 
              <!-- Modal Images -->
-            {{ include('default/categoryShow.html.twig') }}
 
-{#            <div class=\"modal fade\" id=\"dossierImage\" tabindex=\"-1\" aria-labelledby=\"dossierImage\" aria-hidden=\"true\">#}
-{#                <div class=\"modal-dialog modal-xl\">#}
-{#                    <div class=\"modal-content\" style=\"margin-top: 125px\">#}
-
-
-{#                        <div class=\"modal-header py-0 px-16\">#}
-{#                            <img class=\"\" src=\"{{ asset('images/category/') }}\">#}
-{#                            <h3 class=\"mx-2 pt-2\">Dossier</h3>#}
-{#                            <button type=\"button\" class=\"btn-close ferm\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>#}
-{#                        </div>#}
+            <div class=\"modal fade\" id=\"dossierImage\" tabindex=\"-1\" aria-labelledby=\"dossierImage\" aria-hidden=\"true\">
+                <div class=\"modal-dialog modal-xl\">
+                    <div class=\"modal-content\" style=\"margin-top: 125px\">
 
 
-{#                        <div class=\"modal-body container\">#}
 
-{#                            <div class=\"row\">#}
-{#                                <div class=\"col-lg-2\">#}
+                        <div class=\"modal-header py-0 px-16\">
+                            <img class=\"\" src=\"{{ asset('images/category/') }}\">
+                            <h3 class=\"mx-2 pt-2\">Dossier</h3>
+                            <button type=\"button\" class=\"btn-close ferm\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
+                        </div>
 
-{#                                    {% for category in categories %}#}
-{#                                    <img class=\"navDossier active\" id=\"docImg\" src=\"{{ asset(\"/images/dossier.svg\") }}\">#}
-{#                                    <p class=\"text-center\">{{ category.nom }}</p>#}
-{#                                    {% endfor %}#}
 
-{#                                </div>#}
 
-{#                                <div class=\"col-lg-4 nav2 visible\">#}
-{#                                        <div class=\"linkImage\">#}
-{#                                        <a>#}
-{#                                            <img  class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
-{#                                            <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
-{#                                        <div class=\"linkImage\">#}
-{#                                        <a id=\"info\">#}
-{#                                            <img class=\"navImage\"  src=\"{{ asset(\"/images/picture.svg\") }}\">#}
-{#                                            <p>RAPPORT_AVALANCHE_Fino.png</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
-{#                                        <div class=\"linkImage\">#}
-{#                                        <a>#}
-{#                                            <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
-{#                                            <p>Champs_Actuel.png</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
-{#                                        <div class=\"linkImage\">#}
-{#                                        <a>#}
-{#                                            <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
-{#                                            <p>Media_Monde.png</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
-{#                                        <div class=\"linkImage\">#}
-{#                                        <a><img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
-{#                                            <p>News_France.png</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
+                        <div class=\"modal-body container\">
 
-{#                                    </div>#}
-{#                                <div class=\"col-lg-6 nav3\">#}
-{#                                    <img class=\"img-thumbnail\" src=\"{{ asset(\"/images/C.A.T_RAPPORT_AVALANCHE_FINO.png\") }}\">#}
-{#                                    <p class=\"text-center\">Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>#}
-{#                                    <p class=\"text-center\">Image PNG - 415 Ko</p>#}
-{#                                </div>#}
+                            <div class=\"row\">
+                                <div class=\"col-lg-2\">
 
-{#                            </div>#}
-{#                        </div>#}
+                                    {% for category in categories %}
+                                    <img class=\"navDossier active\" id=\"docImg\" src=\"{{ asset(\"/images/dossier.svg\") }}\">
+                                    <p class=\"text-center\">{{ category.nom }}</p>
+                                    {% endfor %}
 
-{#                        <div class=\"modal-footer\">#}
-{#                            <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
+                                </div>
+
+
+                                <div class=\"col-lg-4 nav2 visible\">
+                                    <div class=\"linkImage\">
+                                        <a>
+                                            <img  class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
+                                            <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                        </a>
+                                    </div>
+                                    <div class=\"linkImage\">
+                                        <a id=\"info\">
+                                            <img class=\"navImage\"  src=\"{{ asset(\"/images/picture.svg\") }}\">
+                                            <p>RAPPORT_AVALANCHE_Fino.png</p>
+                                        </a>
+                                    </div>
+                                    <div class=\"linkImage\">
+                                        <a>
+                                            <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
+                                            <p>Champs_Actuel.png</p>
+                                        </a>
+                                    </div>
+                                    <div class=\"linkImage\">
+                                        <a>
+                                            <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
+                                            <p>Media_Monde.png</p>
+                                        </a>
+                                    </div>
+                                    <div class=\"linkImage\">
+                                        <a><img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
+                                            <p>News_France.png</p>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class=\"col-lg-6 nav3\">
+                                    <img class=\"img-thumbnail\" src=\"{{ asset(\"/images/C.A.T_RAPPORT_AVALANCHE_FINO.png\") }}\">
+                                    <p class=\"text-center\">Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                    <p class=\"text-center\">Image PNG - 415 Ko</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class=\"modal-footer\">
+                            <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 {#            <!-- Button Video -->#}

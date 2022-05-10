@@ -14,86 +14,88 @@
             {% for category in categories %}
 
             <!-- Button Image -->
-            <a type="button" class="btn dossier1" data-bs-toggle="modal" data-bs-target="#dossierImage" href="{{ path('category_show', {'id': category.id}) }} src="{{ asset("/images/dossier.svg") }}">
-                <img class="pt-5" src="{{ asset("/images/dossier.svg") }}">
-                <p class="text1">{{ category.nom }}</p>
-            </a>
+            <button type="button" class="btn dossier1" data-bs-toggle="modal" data-bs-target="#dossierImage">
+                <img class="" src="{{ asset("/images/dossier.svg") }}">
+{#                <a class="btn btn-info" href="{{ path('voir', {'id': category.id}) }}">{{ category.nom }}</a>#}
+            </button>
             {% endfor %}
 
              <!-- Modal Images -->
-            {{ include('default/categoryShow.html.twig') }}
 
-{#            <div class="modal fade" id="dossierImage" tabindex="-1" aria-labelledby="dossierImage" aria-hidden="true">#}
-{#                <div class="modal-dialog modal-xl">#}
-{#                    <div class="modal-content" style="margin-top: 125px">#}
-
-
-{#                        <div class="modal-header py-0 px-16">#}
-{#                            <img class="" src="{{ asset('images/category/') }}">#}
-{#                            <h3 class="mx-2 pt-2">Dossier</h3>#}
-{#                            <button type="button" class="btn-close ferm" data-bs-dismiss="modal" aria-label="Close"></button>#}
-{#                        </div>#}
+            <div class="modal fade" id="dossierImage" tabindex="-1" aria-labelledby="dossierImage" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content" style="margin-top: 125px">
 
 
-{#                        <div class="modal-body container">#}
 
-{#                            <div class="row">#}
-{#                                <div class="col-lg-2">#}
+                        <div class="modal-header py-0 px-16">
+                            <img class="" src="{{ asset('images/category/') }}">
+                            <h3 class="mx-2 pt-2">Dossier</h3>
+                            <button type="button" class="btn-close ferm" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
 
-{#                                    {% for category in categories %}#}
-{#                                    <img class="navDossier active" id="docImg" src="{{ asset("/images/dossier.svg") }}">#}
-{#                                    <p class="text-center">{{ category.nom }}</p>#}
-{#                                    {% endfor %}#}
 
-{#                                </div>#}
 
-{#                                <div class="col-lg-4 nav2 visible">#}
-{#                                        <div class="linkImage">#}
-{#                                        <a>#}
-{#                                            <img  class="navImage" src="{{ asset("/images/picture.svg") }}">#}
-{#                                            <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
-{#                                        <div class="linkImage">#}
-{#                                        <a id="info">#}
-{#                                            <img class="navImage"  src="{{ asset("/images/picture.svg") }}">#}
-{#                                            <p>RAPPORT_AVALANCHE_Fino.png</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
-{#                                        <div class="linkImage">#}
-{#                                        <a>#}
-{#                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">#}
-{#                                            <p>Champs_Actuel.png</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
-{#                                        <div class="linkImage">#}
-{#                                        <a>#}
-{#                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">#}
-{#                                            <p>Media_Monde.png</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
-{#                                        <div class="linkImage">#}
-{#                                        <a><img class="navImage" src="{{ asset("/images/picture.svg") }}">#}
-{#                                            <p>News_France.png</p>#}
-{#                                        </a>#}
-{#                                        </div>#}
+                        <div class="modal-body container">
 
-{#                                    </div>#}
-{#                                <div class="col-lg-6 nav3">#}
-{#                                    <img class="img-thumbnail" src="{{ asset("/images/C.A.T_RAPPORT_AVALANCHE_FINO.png") }}">#}
-{#                                    <p class="text-center">Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>#}
-{#                                    <p class="text-center">Image PNG - 415 Ko</p>#}
-{#                                </div>#}
+                            <div class="row">
+                                <div class="col-lg-2">
 
-{#                            </div>#}
-{#                        </div>#}
+                                    {% for category in categories %}
+                                    <img class="navDossier active" id="docImg" src="{{ asset("/images/dossier.svg") }}">
+                                    <p class="text-center">{{ category.nom }}</p>
+                                    {% endfor %}
 
-{#                        <div class="modal-footer">#}
-{#                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
+                                </div>
+
+
+                                <div class="col-lg-4 nav2 visible">
+                                    <div class="linkImage">
+                                        <a>
+                                            <img  class="navImage" src="{{ asset("/images/picture.svg") }}">
+                                            <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                        </a>
+                                    </div>
+                                    <div class="linkImage">
+                                        <a id="info">
+                                            <img class="navImage"  src="{{ asset("/images/picture.svg") }}">
+                                            <p>RAPPORT_AVALANCHE_Fino.png</p>
+                                        </a>
+                                    </div>
+                                    <div class="linkImage">
+                                        <a>
+                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">
+                                            <p>Champs_Actuel.png</p>
+                                        </a>
+                                    </div>
+                                    <div class="linkImage">
+                                        <a>
+                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">
+                                            <p>Media_Monde.png</p>
+                                        </a>
+                                    </div>
+                                    <div class="linkImage">
+                                        <a><img class="navImage" src="{{ asset("/images/picture.svg") }}">
+                                            <p>News_France.png</p>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6 nav3">
+                                    <img class="img-thumbnail" src="{{ asset("/images/C.A.T_RAPPORT_AVALANCHE_FINO.png") }}">
+                                    <p class="text-center">Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                    <p class="text-center">Image PNG - 415 Ko</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 {#            <!-- Button Video -->#}

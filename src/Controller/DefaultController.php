@@ -25,9 +25,10 @@ class DefaultController extends AbstractController
 
     }
 
-    #[Route('/{id}', name: 'category_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'voir', methods: ['GET'])]
     public function show(Category $category): Response
     {
+
         return $this->render('default/categoryShow.html.twig', [
             'category' => $category,
         ]);

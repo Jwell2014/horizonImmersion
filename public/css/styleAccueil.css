@@ -84,8 +84,11 @@ footer{
 
 .dispo{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    height: 50vh;
 }
 
 

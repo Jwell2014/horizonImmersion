@@ -53,39 +53,38 @@ class __TwigTemplate_4f4978316c27ccfbeb1e3f8671900700374ff0a6098bcb14efc9901b02d
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 6, $this->source); })()), "nom", [], "any", false, false, false, 6), 'row');
         echo "
 
-
     ";
-        // line 9
-        if (array_key_exists("category", $context)) {
-            // line 10
+        // line 8
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 8, $this->source); })()), "image", [], "any", false, false, false, 8))) {
+            // line 9
             echo "
         <div class=\"border-1\">
             <span>Image actuelle</span>
             <img class=\"img-thumbnail w-25\" src=\"";
-            // line 13
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/category/" . twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 13, $this->source); })()), "image", [], "any", false, false, false, 13))), "html", null, true);
+            // line 12
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/category/" . twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 12, $this->source); })()), "image", [], "any", false, false, false, 12))), "html", null, true);
             echo "\">
         </div>
 
         <label>Changer l'image si l'actuelle ne convient pas... </label>
         ";
-            // line 17
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "image", [], "any", false, false, false, 17), 'row', ["required" => false]);
+            // line 16
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), "image", [], "any", false, false, false, 16), 'row', ["required" => false]);
             echo "
     ";
         } else {
-            // line 19
+            // line 18
             echo "        ";
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "image", [], "any", false, false, false, 19), 'row', ["required" => true]);
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "image", [], "any", false, false, false, 18), 'row', ["required" => true]);
             echo "
     ";
         }
-        // line 21
+        // line 20
         echo "
 
     ";
-        // line 23
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), 'form_end');
+        // line 22
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'form_end');
         echo "
 </div>
 ";
@@ -109,7 +108,7 @@ class __TwigTemplate_4f4978316c27ccfbeb1e3f8671900700374ff0a6098bcb14efc9901b02d
 
     public function getDebugInfo()
     {
-        return array (  88 => 23,  84 => 21,  78 => 19,  73 => 17,  66 => 13,  61 => 10,  59 => 9,  53 => 6,  48 => 4,  43 => 1,);
+        return array (  87 => 22,  83 => 20,  77 => 18,  72 => 16,  65 => 12,  60 => 9,  58 => 8,  53 => 6,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -121,8 +120,7 @@ class __TwigTemplate_4f4978316c27ccfbeb1e3f8671900700374ff0a6098bcb14efc9901b02d
 
     {{ form_row(form.nom) }}
 
-
-    {% if category is defined %}
+    {% if category.image is not null %}
 
         <div class=\"border-1\">
             <span>Image actuelle</span>

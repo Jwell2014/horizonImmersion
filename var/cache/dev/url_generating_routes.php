@@ -17,10 +17,11 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'category_index' => [[], ['_controller' => 'App\\Controller\\CategoryController::index'], [], [['text', '/category/']], [], [], []],
     'category_new' => [[], ['_controller' => 'App\\Controller\\CategoryController::new'], [], [['text', '/category/new']], [], [], []],
+    'category_show' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/category']], [], [], []],
     'category_edit' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/category']], [], [], []],
     'category_delete' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/category']], [], [], []],
     'app_default' => [[], ['_controller' => 'App\\Controller\\DefaultController::index'], [], [['text', '/']], [], [], []],
-    'category_show' => [['id'], ['_controller' => 'App\\Controller\\DefaultController::show'], [], [['variable', '/', '[^/]++', 'id', true]], [], [], []],
+    'voir' => [['id'], ['_controller' => 'App\\Controller\\DefaultController::show'], [], [['variable', '/', '[^/]++', 'id', true]], [], [], []],
     'chat' => [[], ['_controller' => 'App\\Controller\\DefaultController::chat'], [], [['text', '/chat']], [], [], []],
     'tableau' => [[], ['_controller' => 'App\\Controller\\DefaultController::tableau'], [], [['text', '/tableau']], [], [], []],
 ];

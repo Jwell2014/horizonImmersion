@@ -56,7 +56,7 @@ class CategoryController extends AbstractController
 
 
 
-            //J'enregistre mes produits
+            //J'enregistre mes category
             $entityManager->persist($category);
             $entityManager->flush();
 

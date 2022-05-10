@@ -35,12 +35,13 @@ return [
                     .')'
                 .')'
                 .'|/category/([^/]++)(?'
-                    .'|/edit(*:195)'
-                    .'|(*:203)'
+                    .'|(*:190)'
+                    .'|/edit(*:203)'
+                    .'|(*:211)'
                 .')'
-                .'|/([^/]++)(*:221)'
-                .'|/chat(*:234)'
-                .'|/tableau(*:250)'
+                .'|/([^/]++)(*:229)'
+                .'|/chat(*:242)'
+                .'|/tableau(*:258)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -51,11 +52,12 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        195 => [[['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        203 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        221 => [[['_route' => 'category_show', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        234 => [[['_route' => 'chat', '_controller' => 'App\\Controller\\DefaultController::chat'], [], null, null, false, false, null]],
-        250 => [
+        190 => [[['_route' => 'category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        203 => [[['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        211 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        229 => [[['_route' => 'voir', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        242 => [[['_route' => 'chat', '_controller' => 'App\\Controller\\DefaultController::chat'], [], null, null, false, false, null]],
+        258 => [
             [['_route' => 'tableau', '_controller' => 'App\\Controller\\DefaultController::tableau'], [], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
