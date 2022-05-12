@@ -26,6 +26,16 @@ document.querySelector('#dossierImage').addEventListener('hidden.bs.modal', () =
     btn2.classList.remove('active');
 });
 
+///////////////////////////// Script pour ouverture de dossier
+
+let btnDossier = document.querySelector('#openDossier').
+
+btnDossier.addEventListener('click', () => {
+    btnDossier.classList.toggle("show");
+});
+
+
+
 
 // script pour le bouton apli tableau et ratp
 
@@ -139,7 +149,7 @@ function timer() {
 }
 
 function returnData(input) {
-    return input > 10 ? input : `0${input}`
+    return input >= 10 ? input : `0${input}`
 }
 
 
