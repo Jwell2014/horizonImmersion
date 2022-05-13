@@ -25,17 +25,18 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
             'categories' => $categories,
             'documents' => $documents,
+
         ]);
 
 
     }
 
     #[Route('/{id}', name: 'voir', methods: ['GET'])]
-    public function show(Category $category): Response
+    public function show(Document $document): Response
     {
 
         return $this->render('default/categoryShow.html.twig', [
-            'category' => $category,
+            'document' => $document,
         ]);
     }
 

@@ -26,15 +26,26 @@
 //     btn2.classList.remove('active');
 // });
 
-const openNavCateg = document.querySelector('.wrapper');
+const openNavCateg = document.querySelector('.iconeDoc');
 const dossier = document.querySelector('.sub-nav');
+const openDoc = document.querySelector('.openDocument');
+const doc = document.querySelector('.sub-doc');
 
 let openDossier= false;
 
 openNavCateg.addEventListener('click', () => {
     openDossier = !openDossier;
-   openDossier ? dossier.classList.add('openDossier') :dossier.classList.remove('openDossier') ;
+   openDossier ? dossier.classList.add('openDossier') : dossier.classList.remove('openDossier'),doc.classList.remove('openDoc') ;
 });
+
+
+openDoc.addEventListener('click', () => {
+    console.log('ok')
+    openDossier = !openDossier;
+    openDossier ? doc.classList.add('openDoc') : doc.classList.remove('openDoc');
+
+});
+
 
 
 

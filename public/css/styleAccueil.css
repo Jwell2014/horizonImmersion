@@ -182,7 +182,7 @@ footer{
     visibility: hidden;
 }
 
-.sub-nav:hover .sub-doc {
+.sub-doc.openDoc {
     transform: translateX(200px);
     visibility: visible;
 }
@@ -205,10 +205,10 @@ footer{
     visibility: hidden;
 }
 
-.sub-doc:hover .sub-sousDoc {
-    transform: translateX(400px);
-    visibility: visible;
-}
+/*.sub-doc:hover .sub-sousDoc {*/
+/*    transform: translateX(400px);*/
+/*    visibility: visible;*/
+/*}*/
 
 .displayed {
     display: block;
