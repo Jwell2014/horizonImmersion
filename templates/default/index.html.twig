@@ -20,7 +20,7 @@
                             <h2>Dossier</h2>
                             {% for category in categories %}
                             <div>
-                                <a>
+                                <a class="">
                                     <img class="navImage" src="{{ asset('images/category/' ~ category.image) }}">
                                     <p >{{ category.nom }}</p>
                                 </a>
@@ -29,35 +29,38 @@
                             {% endfor %}
                             <div class="sub-doc">
                                 <h2>Document</h2>
+                                {% for document in documents %}
                                 <div class="linkImage">
+
                                     <a>
                                         <img  class="navImage" src="{{ asset("/images/picture.svg") }}">
-                                        <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                        <p>{{ document.nom }}</p>
                                     </a>
                                 </div>
-                                <div class="linkImage">
-                                    <a id="info">
-                                        <img class="navImage"  src="{{ asset("/images/picture.svg") }}">
-                                        <p>RAPPORT_AVALANCHE_Fino.png</p>
-                                    </a>
-                                </div>
-                                <div class="linkImage">
-                                    <a>
-                                        <img class="navImage" src="{{ asset("/images/picture.svg") }}">
-                                        <p>Champs_Actuel.png</p>
-                                    </a>
-                                </div>
-                                <div class="linkImage">
-                                    <a>
-                                        <img class="navImage" src="{{ asset("/images/picture.svg") }}">
-                                        <p>Media_Monde.png</p>
-                                    </a>
-                                </div>
-                                <div class="linkImage">
-                                    <a><img class="navImage" src="{{ asset("/images/picture.svg") }}">
-                                        <p>News_France.png</p>
-                                    </a>
-                                </div>
+                                {% endfor %}
+{#                                <div class="linkImage">#}
+{#                                    <a id="info">#}
+{#                                        <img class="navImage"  src="{{ asset("/images/picture.svg") }}">#}
+{#                                        <p>RAPPORT_AVALANCHE_Fino.png</p>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="linkImage">#}
+{#                                    <a>#}
+{#                                        <img class="navImage" src="{{ asset("/images/picture.svg") }}">#}
+{#                                        <p>Champs_Actuel.png</p>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="linkImage">#}
+{#                                    <a>#}
+{#                                        <img class="navImage" src="{{ asset("/images/picture.svg") }}">#}
+{#                                        <p>Media_Monde.png</p>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="linkImage">#}
+{#                                    <a><img class="navImage" src="{{ asset("/images/picture.svg") }}">#}
+{#                                        <p>News_France.png</p>#}
+{#                                    </a>#}
+{#                                </div>#}
 
                                 <div class="sub-sousDoc">
                                     <h2>Aperçu</h2>
@@ -119,35 +122,37 @@
 
 
                                 <div class="col-lg-4 nav2 visible">
+
                                     <div class="linkImage">
                                         <a>
                                             <img  class="navImage" src="{{ asset("/images/picture.svg") }}">
                                             <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
                                         </a>
                                     </div>
-                                    <div class="linkImage">
-                                        <a id="info">
-                                            <img class="navImage"  src="{{ asset("/images/picture.svg") }}">
-                                            <p>RAPPORT_AVALANCHE_Fino.png</p>
-                                        </a>
-                                    </div>
-                                    <div class="linkImage">
-                                        <a>
-                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">
-                                            <p>Champs_Actuel.png</p>
-                                        </a>
-                                    </div>
-                                    <div class="linkImage">
-                                        <a>
-                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">
-                                            <p>Media_Monde.png</p>
-                                        </a>
-                                    </div>
-                                    <div class="linkImage">
-                                        <a><img class="navImage" src="{{ asset("/images/picture.svg") }}">
-                                            <p>News_France.png</p>
-                                        </a>
-                                    </div>
+
+{#                                    <div class="linkImage">#}
+{#                                        <a id="info">#}
+{#                                            <img class="navImage"  src="{{ asset("/images/picture.svg") }}">#}
+{#                                            <p>RAPPORT_AVALANCHE_Fino.png</p>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="linkImage">#}
+{#                                        <a>#}
+{#                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">#}
+{#                                            <p>Champs_Actuel.png</p>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="linkImage">#}
+{#                                        <a>#}
+{#                                            <img class="navImage" src="{{ asset("/images/picture.svg") }}">#}
+{#                                            <p>Media_Monde.png</p>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="linkImage">#}
+{#                                        <a><img class="navImage" src="{{ asset("/images/picture.svg") }}">#}
+{#                                            <p>News_France.png</p>#}
+{#                                        </a>#}
+{#                                    </div>#}
 
                                 </div>
                                 <div class="col-lg-6 nav3">

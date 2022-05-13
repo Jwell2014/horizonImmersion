@@ -99,14 +99,7 @@ footer{
     border-radius: 0 10px 10px 0;
 }
 
-.dot {
-    flex-shrink: 0;
-    margin: 10px 3px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #000;
-}
+
 
 
 .nav-bloc {
@@ -119,7 +112,7 @@ footer{
 .nav-bloc:hover {
     background: rgb(24, 24, 24);
 }
-.nav-bloc:hover .sub-nav {
+.sub-nav.openDossier {
     transform: translateX(100px);
 }
 .nav-bloc svg {

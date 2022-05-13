@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\Document;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,10 +17,14 @@ class DefaultController extends AbstractController
         $categories = $entityManagerInterface
             ->getRepository(Category::class)
             ->findAll();
+        $documents = $entityManagerInterface
+            ->getRepository(Document::class)
+            ->findAll();
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
             'categories' => $categories,
+            'documents' => $documents,
         ]);
 
 

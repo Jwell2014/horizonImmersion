@@ -1,32 +1,40 @@
-const btn = document.querySelector('#docImg');
-const text = document.querySelector('.nav2');
-const btn2 = document.querySelector('#info');
-const text2 = document.querySelector('.nav3');
+// const btn = document.querySelector('#docImg');
+// const text = document.querySelector('.nav2');
+// const btn2 = document.querySelector('#info');
+// const text2 = document.querySelector('.nav3');
+//
+// let visible = false;
+// let active = false;
+//
+// btn.addEventListener('click', () => {
+//    visible = !visible;
+//     visible ? text.classList.add('visible') : text.classList.remove('visible'), text2.classList.remove('visible'), btn2.classList.remove('active');
+//
+//
+// });
+//
+// btn2.addEventListener('click', () => {
+//     active = !active;
+//     text2.classList.toggle('visible');
+//     btn2.classList.toggle('active');
+// });
+//
+//
+//
+// document.querySelector('#dossierImage').addEventListener('hidden.bs.modal', () => {
+//     text2.classList.remove('visible');
+//     btn2.classList.remove('active');
+// });
 
-let visible = false;
-let active = false;
+const openNavCateg = document.querySelector('.wrapper');
+const dossier = document.querySelector('.sub-nav');
 
-btn.addEventListener('click', () => {
-   visible = !visible;
-    visible ? text.classList.add('visible') : text.classList.remove('visible'), text2.classList.remove('visible'), btn2.classList.remove('active');
+let openDossier= false;
 
-
+openNavCateg.addEventListener('click', () => {
+    openDossier = !openDossier;
+   openDossier ? dossier.classList.add('openDossier') :dossier.classList.remove('openDossier') ;
 });
-
-btn2.addEventListener('click', () => {
-    active = !active;
-    text2.classList.toggle('visible');
-    btn2.classList.toggle('active');
-});
-
-
-
-document.querySelector('#dossierImage').addEventListener('hidden.bs.modal', () => {
-    text2.classList.remove('visible');
-    btn2.classList.remove('active');
-});
-
-
 
 
 

@@ -107,7 +107,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 22
             echo "                            <div>
-                                <a>
+                                <a class=\"\">
                                     <img class=\"navImage\" src=\"";
             // line 24
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/category/" . twig_get_attribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 24))), "html", null, true);
@@ -127,55 +127,36 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
         // line 30
         echo "                            <div class=\"sub-doc\">
                                 <h2>Document</h2>
-                                <div class=\"linkImage\">
+                                ";
+        // line 32
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["documents"]) || array_key_exists("documents", $context) ? $context["documents"] : (function () { throw new RuntimeError('Variable "documents" does not exist.', 32, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["document"]) {
+            // line 33
+            echo "                                <div class=\"linkImage\">
+
                                     <a>
                                         <img  class=\"navImage\" src=\"";
-        // line 34
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
-        echo "\">
-                                        <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+            // line 36
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
+            echo "\">
+                                        <p>";
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["document"], "nom", [], "any", false, false, false, 37), "html", null, true);
+            echo "</p>
                                     </a>
                                 </div>
-                                <div class=\"linkImage\">
-                                    <a id=\"info\">
-                                        <img class=\"navImage\"  src=\"";
-        // line 40
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
-        echo "\">
-                                        <p>RAPPORT_AVALANCHE_Fino.png</p>
-                                    </a>
-                                </div>
-                                <div class=\"linkImage\">
-                                    <a>
-                                        <img class=\"navImage\" src=\"";
-        // line 46
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
-        echo "\">
-                                        <p>Champs_Actuel.png</p>
-                                    </a>
-                                </div>
-                                <div class=\"linkImage\">
-                                    <a>
-                                        <img class=\"navImage\" src=\"";
-        // line 52
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
-        echo "\">
-                                        <p>Media_Monde.png</p>
-                                    </a>
-                                </div>
-                                <div class=\"linkImage\">
-                                    <a><img class=\"navImage\" src=\"";
-        // line 57
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
-        echo "\">
-                                        <p>News_France.png</p>
-                                    </a>
-                                </div>
-
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['document'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 64
+        echo "
                                 <div class=\"sub-sousDoc\">
                                     <h2>Aperçu</h2>
                                     <img class=\"img-thumbnail displayed\" src=\"";
-        // line 64
+        // line 67
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/C.A.T_RAPPORT_AVALANCHE_FINO.png"), "html", null, true);
         echo "\">
                                     <p class=\"text-center pt-2\">Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
@@ -197,27 +178,27 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
 
             ";
-        // line 83
+        // line 86
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 83, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 86, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 84
+            // line 87
             echo "
             <!-- Button Image -->
             <button type=\"button\" class=\"btn dossier1\" data-bs-toggle=\"modal\" data-bs-target=\"#dossierImage\">
                 <img class=\"\" src=\"";
-            // line 87
+            // line 90
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/dossier.svg"), "html", null, true);
             echo "\">
 ";
-            // line 89
+            // line 92
             echo "            </button>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 91
+        // line 94
         echo "
              <!-- Modal Images -->
 
@@ -229,7 +210,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
                         <div class=\"modal-header py-0 px-16\">
                             <img class=\"\" src=\"";
-        // line 101
+        // line 104
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/category/"), "html", null, true);
         echo "\">
                             <h3 class=\"mx-2 pt-2\">Dossier</h3>
@@ -244,78 +225,47 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                                 <div class=\"col-lg-2\">
 
                                     ";
-        // line 113
+        // line 116
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 113, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 116, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 114
+            // line 117
             echo "                                    <img class=\"navDossier active\" id=\"docImg\" src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/dossier.svg"), "html", null, true);
             echo "\">
                                     <p class=\"text-center\">";
-            // line 115
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nom", [], "any", false, false, false, 115), "html", null, true);
+            // line 118
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "nom", [], "any", false, false, false, 118), "html", null, true);
             echo "</p>
                                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 117
+        // line 120
         echo "
                                 </div>
 
 
                                 <div class=\"col-lg-4 nav2 visible\">
+
                                     <div class=\"linkImage\">
                                         <a>
                                             <img  class=\"navImage\" src=\"";
-        // line 124
+        // line 128
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
         echo "\">
                                             <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
                                         </a>
                                     </div>
-                                    <div class=\"linkImage\">
-                                        <a id=\"info\">
-                                            <img class=\"navImage\"  src=\"";
-        // line 130
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
-        echo "\">
-                                            <p>RAPPORT_AVALANCHE_Fino.png</p>
-                                        </a>
-                                    </div>
-                                    <div class=\"linkImage\">
-                                        <a>
-                                            <img class=\"navImage\" src=\"";
-        // line 136
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
-        echo "\">
-                                            <p>Champs_Actuel.png</p>
-                                        </a>
-                                    </div>
-                                    <div class=\"linkImage\">
-                                        <a>
-                                            <img class=\"navImage\" src=\"";
-        // line 142
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
-        echo "\">
-                                            <p>Media_Monde.png</p>
-                                        </a>
-                                    </div>
-                                    <div class=\"linkImage\">
-                                        <a><img class=\"navImage\" src=\"";
-        // line 147
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/picture.svg"), "html", null, true);
-        echo "\">
-                                            <p>News_France.png</p>
-                                        </a>
-                                    </div>
 
+";
+        // line 156
+        echo "
                                 </div>
                                 <div class=\"col-lg-6 nav3\">
                                     <img class=\"img-thumbnail\" src=\"";
-        // line 154
+        // line 159
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/C.A.T_RAPPORT_AVALANCHE_FINO.png"), "html", null, true);
         echo "\">
                                     <p class=\"text-center\">Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
@@ -334,17 +284,17 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
 
 ";
-        // line 179
+        // line 184
         echo "
 ";
-        // line 194
+        // line 199
         echo "
 
 ";
-        // line 209
+        // line 214
         echo "
 ";
-        // line 219
+        // line 224
         echo "
 
         </div>
@@ -354,7 +304,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
         <div class=\"col-lg-4\">
             <img class=\"imgCenter\" src=\"";
-        // line 227
+        // line 232
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/LogoNoir.png"), "html", null, true);
         echo "\">
         </div>
@@ -377,7 +327,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
             </div>
 
 ";
-        // line 260
+        // line 265
         echo "
             <div id=\"chrono\" class=\"col-lg-12 mx-auto\">
                 <form name=\"form_main\">
@@ -414,11 +364,11 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
             <div class=\"col-lg-2\">
                 <div class=\"rectangle\">
                     <a  href=\"";
-        // line 295
+        // line 300
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chat");
         echo "\">
                         <img src=\"";
-        // line 296
+        // line 301
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/logoRond.svg"), "html", null, true);
         echo "\">
                         <h5>CONTINUER</h5>
@@ -430,7 +380,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                 <!-- Button tableau-->
                 <button type=\"button\" class=\"btn btnApli\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">
                     <img class=\"\" src=\"";
-        // line 305
+        // line 310
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/tableau.svg"), "html", null, true);
         echo "\">
                 </button>
@@ -439,11 +389,11 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                     <div class=\"modal-dialog modal-xl mx-0\">
                         <div class=\"modal-content1\">
 ";
-        // line 315
+        // line 320
         echo "
                             <div class=\"modal-body\">
                                 ";
-        // line 317
+        // line 322
         echo twig_include($this->env, $context, "default/tableau.html.twig");
         echo "
                             </div>
@@ -457,7 +407,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                 <!-- Button RATP -->
                 <button type=\"button\" class=\"btn btnApli\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal2\">
                     <img class=\"\" src=\"";
-        // line 328
+        // line 333
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/ratp2.svg"), "html", null, true);
         echo "\">
                 </button>
@@ -467,7 +417,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                         <div class=\"modal-content\">
                             <div class=\"modal-header\">
                                 <img class=\"\" src=\"";
-        // line 335
+        // line 340
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/ratp2.svg"), "html", null, true);
         echo "\">
                                 <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>
@@ -475,7 +425,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
                             <div class=\"modal-body\">
 ";
-        // line 510
+        // line 515
         echo "
 
                                 <div id=\"enigme\" class=\"container\">
@@ -495,7 +445,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
 
                                 <img class=\"metro1\" src=\"";
-        // line 528
+        // line 533
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/metro1.svg"), "html", null, true);
         echo "\">
                             </div>
@@ -513,21 +463,12 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
             <div class=\"col-lg-5 d-flex justify-content-around pt-2\">
 
                 ";
-        // line 544
-        echo "                <a href=\"\">
-                    <img class=\"pt-1\" src=\"";
-        // line 545
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/battery.svg"), "html", null, true);
-        echo "\" title=\"Batterie 90%\">
-                </a>
-
-                ";
         // line 549
         echo "                <a href=\"\">
-                    <img src=\"";
+                    <img class=\"pt-1\" src=\"";
         // line 550
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/temps.svg"), "html", null, true);
-        echo "\" title=\"Temps nuageux\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/battery.svg"), "html", null, true);
+        echo "\" title=\"Batterie 90%\">
                 </a>
 
                 ";
@@ -535,21 +476,30 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
         echo "                <a href=\"\">
                     <img src=\"";
         // line 555
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/temps.svg"), "html", null, true);
+        echo "\" title=\"Temps nuageux\">
+                </a>
+
+                ";
+        // line 559
+        echo "                <a href=\"\">
+                    <img src=\"";
+        // line 560
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/wifi.svg"), "html", null, true);
         echo "\" title=\"WIFI activé\">
                 </a>
 
                 ";
-        // line 559
+        // line 564
         echo "                <a href=\"#\" role=\"button\" data-target=\"#modalChat\" data-toggle=\"modalChat\">
                     <img src=\"";
-        // line 560
+        // line 565
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/logoChat.svg"), "html", null, true);
         echo "\" title=\"CHAT\">
                 </a>
 
                 ";
-        // line 564
+        // line 569
         echo "                <div class=\"modalChat\" id=\"modalChat\" role=\"dialog\">
                     <div class=\"modalChat-content\">
                         <div class=\"modalChat-close\" data-dismiss=\"dialog\">
@@ -583,7 +533,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                 </div>
 
                 ";
-        // line 597
+        // line 602
         echo "                <a href=\"\" class=\"heure\">
                     <span id=\"h\">11</span>
                     <span class=\"colon\"> : </span>
@@ -592,10 +542,10 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                     <span id=\"s\">55</span>
                 </a>
                 ";
-        // line 605
+        // line 610
         echo "                <a href=\"\">
                     <img id=\"imgLogoBleu\" src=\"";
-        // line 606
+        // line 611
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("/images/HIlogoPtit.svg"), "html", null, true);
         echo "\">
                 </a>
@@ -631,7 +581,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
     public function getDebugInfo()
     {
-        return array (  599 => 606,  596 => 605,  587 => 597,  553 => 564,  547 => 560,  544 => 559,  538 => 555,  535 => 554,  529 => 550,  526 => 549,  520 => 545,  517 => 544,  499 => 528,  479 => 510,  471 => 335,  461 => 328,  447 => 317,  443 => 315,  434 => 305,  422 => 296,  418 => 295,  381 => 260,  358 => 227,  348 => 219,  345 => 209,  341 => 194,  338 => 179,  319 => 154,  309 => 147,  301 => 142,  292 => 136,  283 => 130,  274 => 124,  265 => 117,  257 => 115,  252 => 114,  248 => 113,  233 => 101,  221 => 91,  214 => 89,  210 => 87,  205 => 84,  201 => 83,  179 => 64,  169 => 57,  161 => 52,  152 => 46,  143 => 40,  134 => 34,  128 => 30,  117 => 25,  113 => 24,  109 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  549 => 611,  546 => 610,  537 => 602,  503 => 569,  497 => 565,  494 => 564,  488 => 560,  485 => 559,  479 => 555,  476 => 554,  470 => 550,  467 => 549,  449 => 533,  429 => 515,  421 => 340,  411 => 333,  397 => 322,  393 => 320,  384 => 310,  372 => 301,  368 => 300,  331 => 265,  308 => 232,  298 => 224,  295 => 214,  291 => 199,  288 => 184,  269 => 159,  264 => 156,  256 => 128,  246 => 120,  238 => 118,  233 => 117,  229 => 116,  214 => 104,  202 => 94,  195 => 92,  191 => 90,  186 => 87,  182 => 86,  160 => 67,  155 => 64,  145 => 37,  141 => 36,  136 => 33,  132 => 32,  128 => 30,  117 => 25,  113 => 24,  109 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -658,7 +608,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                             <h2>Dossier</h2>
                             {% for category in categories %}
                             <div>
-                                <a>
+                                <a class=\"\">
                                     <img class=\"navImage\" src=\"{{ asset('images/category/' ~ category.image) }}\">
                                     <p >{{ category.nom }}</p>
                                 </a>
@@ -667,35 +617,38 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
                             {% endfor %}
                             <div class=\"sub-doc\">
                                 <h2>Document</h2>
+                                {% for document in documents %}
                                 <div class=\"linkImage\">
+
                                     <a>
                                         <img  class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
-                                        <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
+                                        <p>{{ document.nom }}</p>
                                     </a>
                                 </div>
-                                <div class=\"linkImage\">
-                                    <a id=\"info\">
-                                        <img class=\"navImage\"  src=\"{{ asset(\"/images/picture.svg\") }}\">
-                                        <p>RAPPORT_AVALANCHE_Fino.png</p>
-                                    </a>
-                                </div>
-                                <div class=\"linkImage\">
-                                    <a>
-                                        <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
-                                        <p>Champs_Actuel.png</p>
-                                    </a>
-                                </div>
-                                <div class=\"linkImage\">
-                                    <a>
-                                        <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
-                                        <p>Media_Monde.png</p>
-                                    </a>
-                                </div>
-                                <div class=\"linkImage\">
-                                    <a><img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
-                                        <p>News_France.png</p>
-                                    </a>
-                                </div>
+                                {% endfor %}
+{#                                <div class=\"linkImage\">#}
+{#                                    <a id=\"info\">#}
+{#                                        <img class=\"navImage\"  src=\"{{ asset(\"/images/picture.svg\") }}\">#}
+{#                                        <p>RAPPORT_AVALANCHE_Fino.png</p>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class=\"linkImage\">#}
+{#                                    <a>#}
+{#                                        <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
+{#                                        <p>Champs_Actuel.png</p>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class=\"linkImage\">#}
+{#                                    <a>#}
+{#                                        <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
+{#                                        <p>Media_Monde.png</p>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class=\"linkImage\">#}
+{#                                    <a><img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
+{#                                        <p>News_France.png</p>#}
+{#                                    </a>#}
+{#                                </div>#}
 
                                 <div class=\"sub-sousDoc\">
                                     <h2>Aperçu</h2>
@@ -757,35 +710,37 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
 
                                 <div class=\"col-lg-4 nav2 visible\">
+
                                     <div class=\"linkImage\">
                                         <a>
                                             <img  class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
                                             <p>Avis_de_Recherche_Nicolas_Zlatesky.jpeg</p>
                                         </a>
                                     </div>
-                                    <div class=\"linkImage\">
-                                        <a id=\"info\">
-                                            <img class=\"navImage\"  src=\"{{ asset(\"/images/picture.svg\") }}\">
-                                            <p>RAPPORT_AVALANCHE_Fino.png</p>
-                                        </a>
-                                    </div>
-                                    <div class=\"linkImage\">
-                                        <a>
-                                            <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
-                                            <p>Champs_Actuel.png</p>
-                                        </a>
-                                    </div>
-                                    <div class=\"linkImage\">
-                                        <a>
-                                            <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
-                                            <p>Media_Monde.png</p>
-                                        </a>
-                                    </div>
-                                    <div class=\"linkImage\">
-                                        <a><img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">
-                                            <p>News_France.png</p>
-                                        </a>
-                                    </div>
+
+{#                                    <div class=\"linkImage\">#}
+{#                                        <a id=\"info\">#}
+{#                                            <img class=\"navImage\"  src=\"{{ asset(\"/images/picture.svg\") }}\">#}
+{#                                            <p>RAPPORT_AVALANCHE_Fino.png</p>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class=\"linkImage\">#}
+{#                                        <a>#}
+{#                                            <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
+{#                                            <p>Champs_Actuel.png</p>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class=\"linkImage\">#}
+{#                                        <a>#}
+{#                                            <img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
+{#                                            <p>Media_Monde.png</p>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class=\"linkImage\">#}
+{#                                        <a><img class=\"navImage\" src=\"{{ asset(\"/images/picture.svg\") }}\">#}
+{#                                            <p>News_France.png</p>#}
+{#                                        </a>#}
+{#                                    </div>#}
 
                                 </div>
                                 <div class=\"col-lg-6 nav3\">
