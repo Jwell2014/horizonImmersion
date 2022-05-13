@@ -26,13 +26,7 @@ document.querySelector('#dossierImage').addEventListener('hidden.bs.modal', () =
     btn2.classList.remove('active');
 });
 
-///////////////////////////// Script pour ouverture de dossier
 
-let btnDossier = document.querySelector('#openDossier').
-
-btnDossier.addEventListener('click', () => {
-    btnDossier.classList.toggle("show");
-});
 
 
 
