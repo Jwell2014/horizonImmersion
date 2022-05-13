@@ -16,7 +16,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 #[Route('/category')]
 class CategoryController extends AbstractController
 {
-    #[Route('/', name: 'category_index', methods: ['GET'])]
+    #[Route('/all', name: 'category_index', methods: ['GET'])]
     public function index(EntityManagerInterface $entityManager): Response
     {
         $categories = $entityManager

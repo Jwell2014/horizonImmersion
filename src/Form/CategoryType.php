@@ -37,7 +37,9 @@ class CategoryType extends AbstractType
 
             ])
 
-        ->add('Save', SubmitType::class);
+        ->add('Save', SubmitType::class, [
+            'attr'=> [ 'class'=> 'btn btn-success mt-3'],
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

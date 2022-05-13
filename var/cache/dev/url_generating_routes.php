@@ -15,7 +15,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
-    'category_index' => [[], ['_controller' => 'App\\Controller\\CategoryController::index'], [], [['text', '/category/']], [], [], []],
+    'category_index' => [[], ['_controller' => 'App\\Controller\\CategoryController::index'], [], [['text', '/category/all']], [], [], []],
     'category_new' => [[], ['_controller' => 'App\\Controller\\CategoryController::new'], [], [['text', '/category/new']], [], [], []],
     'category_show' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/category']], [], [], []],
     'category_edit' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/category']], [], [], []],
@@ -24,4 +24,9 @@ return [
     'voir' => [['id'], ['_controller' => 'App\\Controller\\DefaultController::show'], [], [['variable', '/', '[^/]++', 'id', true]], [], [], []],
     'chat' => [[], ['_controller' => 'App\\Controller\\DefaultController::chat'], [], [['text', '/chat']], [], [], []],
     'tableau' => [[], ['_controller' => 'App\\Controller\\DefaultController::tableau'], [], [['text', '/tableau']], [], [], []],
+    'document_index' => [[], ['_controller' => 'App\\Controller\\DocumentController::index'], [], [['text', '/document/all']], [], [], []],
+    'document_new' => [[], ['_controller' => 'App\\Controller\\DocumentController::new'], [], [['text', '/document/new']], [], [], []],
+    'document_show' => [['id'], ['_controller' => 'App\\Controller\\DocumentController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/document']], [], [], []],
+    'document_edit' => [['id'], ['_controller' => 'App\\Controller\\DocumentController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/document']], [], [], []],
+    'document_delete' => [['id'], ['_controller' => 'App\\Controller\\DocumentController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/document']], [], [], []],
 ];

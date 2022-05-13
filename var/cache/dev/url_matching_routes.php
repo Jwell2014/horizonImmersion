@@ -13,9 +13,11 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/category' => [[['_route' => 'category_index', '_controller' => 'App\\Controller\\CategoryController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/category/all' => [[['_route' => 'category_index', '_controller' => 'App\\Controller\\CategoryController::index'], null, ['GET' => 0], null, false, false, null]],
         '/category/new' => [[['_route' => 'category_new', '_controller' => 'App\\Controller\\CategoryController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'app_default', '_controller' => 'App\\Controller\\DefaultController::index'], null, null, null, false, false, null]],
+        '/document/all' => [[['_route' => 'document_index', '_controller' => 'App\\Controller\\DocumentController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/document/new' => [[['_route' => 'document_new', '_controller' => 'App\\Controller\\DocumentController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -42,6 +44,11 @@ return [
                 .'|/([^/]++)(*:229)'
                 .'|/chat(*:242)'
                 .'|/tableau(*:258)'
+                .'|/document/([^/]++)(?'
+                    .'|(*:287)'
+                    .'|/edit(*:300)'
+                    .'|(*:308)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -57,8 +64,11 @@ return [
         211 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         229 => [[['_route' => 'voir', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         242 => [[['_route' => 'chat', '_controller' => 'App\\Controller\\DefaultController::chat'], [], null, null, false, false, null]],
-        258 => [
-            [['_route' => 'tableau', '_controller' => 'App\\Controller\\DefaultController::tableau'], [], null, null, false, false, null],
+        258 => [[['_route' => 'tableau', '_controller' => 'App\\Controller\\DefaultController::tableau'], [], null, null, false, false, null]],
+        287 => [[['_route' => 'document_show', '_controller' => 'App\\Controller\\DocumentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        300 => [[['_route' => 'document_edit', '_controller' => 'App\\Controller\\DocumentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        308 => [
+            [['_route' => 'document_delete', '_controller' => 'App\\Controller\\DocumentController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

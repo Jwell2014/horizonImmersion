@@ -85,17 +85,19 @@ class __TwigTemplate_1851f586d6b3442a726b79cf02d6c9508d52498b5078159c244fe73f3fb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Category</h1>
+        echo "    <div class=\"container\">
+    <h1 class=\"text-center my-5 text-decoration-underline\">Create new Category</h1>
 
     ";
-        // line 8
+        // line 9
         echo twig_include($this->env, $context, "category/_form.html.twig");
         echo "
 
-    <a href=\"";
-        // line 10
+    <a class=\"float-end btn btn-outline-dark\"href=\"";
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("category_index");
-        echo "\">back to list</a>
+        echo "\">Retour aux catégories</a>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,7 +119,7 @@ class __TwigTemplate_1851f586d6b3442a726b79cf02d6c9508d52498b5078159c244fe73f3fb
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  98 => 11,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +129,13 @@ class __TwigTemplate_1851f586d6b3442a726b79cf02d6c9508d52498b5078159c244fe73f3fb
 {% block title %}New Category{% endblock %}
 
 {% block body %}
-    <h1>Create new Category</h1>
+    <div class=\"container\">
+    <h1 class=\"text-center my-5 text-decoration-underline\">Create new Category</h1>
 
     {{ include('category/_form.html.twig') }}
 
-    <a href=\"{{ path('category_index') }}\">back to list</a>
+    <a class=\"float-end btn btn-outline-dark\"href=\"{{ path('category_index') }}\">Retour aux catégories</a>
+    </div>
 {% endblock %}
 ", "category/new.html.twig", "/Users/coco/Desktop/Projet DEV/horizonImmersion/templates/category/new.html.twig");
     }
