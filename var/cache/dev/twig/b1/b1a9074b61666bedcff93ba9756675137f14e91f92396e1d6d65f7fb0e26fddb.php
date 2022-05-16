@@ -136,7 +136,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
             foreach ($context['_seq'] as $context["_key"] => $context["document"]) {
                 // line 34
                 echo "                                ";
-                if (((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 34, $this->source); })()) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["document"], "category", [], "any", false, false, false, 34), "id", [], "any", false, false, false, 34))) {
+                if ((twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 34) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["document"], "category", [], "any", false, false, false, 34), "id", [], "any", false, false, false, 34))) {
                     // line 35
                     echo "
                                 <div class=\"linkImage\">
@@ -644,7 +644,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 
                                 <h2>Document {{ category.nom }}</h2>
                                 {% for document in documents %}
-                                {% if categories == document.category.id %}
+                                {% if category.id == document.category.id %}
 
                                 <div class=\"linkImage\">
                                     <p>{{ dump (category.id) }}</p>
