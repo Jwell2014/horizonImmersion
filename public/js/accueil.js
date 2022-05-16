@@ -28,23 +28,41 @@
 
 const openNavCateg = document.querySelector('.iconeDoc');
 const dossier = document.querySelector('.sub-nav');
-const openDoc = document.querySelector('.openDocument');
-const doc = document.querySelector('.sub-doc');
+const openDocs = document.querySelectorAll('.openDocument');
+const docs = document.querySelectorAll('.sub-doc');
 
 let openDossier= false;
 
+
 openNavCateg.addEventListener('click', () => {
     openDossier = !openDossier;
-   openDossier ? dossier.classList.add('openDossier') : dossier.classList.remove('openDossier'),doc.classList.remove('openDoc') ;
+    openDossier ? dossier.classList.add('openDossier') : dossier.classList.remove('openDossier') ;
 });
 
 
-openDoc.addEventListener('click', () => {
-    console.log('ok')
-    openDossier = !openDossier;
-    openDossier ? doc.classList.add('openDoc') : doc.classList.remove('openDoc');
+for(let i = 0; i < openDocs.length; i++){
+    console.log(i);
+    openDocs[i].addEventListener('click', () => {
+       console.log('ok')
+        for(let e = 0; e < docs.length; e++){
+            openDossier = !openDossier;
+            openDossier ? docs[e].classList.add('openDoc') : docs[e].classList.remove('openDoc');
+
+            console.log(docs[e])
+        };
 
 });
+}
+
+
+
+// openDocs.addEventListener('click', () => {
+//         console.log('ok')
+//         openDossier = !openDossier;
+//         openDossier ? doc.classList.add('openDoc') : doc.classList.remove('openDoc');
+//
+// });
+
 
 
 

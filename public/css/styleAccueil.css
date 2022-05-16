@@ -139,6 +139,7 @@ footer{
     transition: transform 0.2s ease-in-out;
     border-right: 2px solid #000;
     border-left: 2px solid #000;
+
 }
 .sub-nav h2 {
     font-family: open sans, sans-serif;
@@ -180,6 +181,7 @@ footer{
     border-right: 2px solid #000;
     border-left: 2px solid #000;
     visibility: hidden;
+    overflow: auto;
 }
 
 .sub-doc.openDoc {
