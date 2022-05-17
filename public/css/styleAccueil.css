@@ -207,18 +207,6 @@ footer{
     visibility: hidden;
 }
 
-/*.sub-doc:hover .sub-sousDoc {*/
-/*    transform: translateX(400px);*/
-/*    visibility: visible;*/
-/*}*/
-
-.displayed {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    width: 75%;
-}
 /* fin css des dossier */
 
 
