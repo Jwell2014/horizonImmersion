@@ -34,7 +34,8 @@ const docs = document.querySelectorAll('.sub-doc');
 let openDossier= false;
 
 
-openNavCateg.addEventListener('click', () => {
+openNavCateg.addEventListener('click', (e) => {
+    console.log(e);
     openDossier = !openDossier;
     openDossier ? dossier.classList.add('openDossier') : dossier.classList.remove('openDossier') ;
 });
@@ -42,13 +43,14 @@ openNavCateg.addEventListener('click', () => {
 
 for(let i = 0; i < openDocs.length; i++){
     console.log(i);
-    openDocs[i].addEventListener('click', () => {
-       console.log('ok')
+    openDocs[i].addEventListener('click', (e) => {
+        console.log(e.target.id)
         for(let e = 0; e < docs.length; e++){
             openDossier = !openDossier;
             openDossier ? docs[e].classList.add('openDoc') : docs[e].classList.remove('openDoc');
 
             console.log(docs[e])
+
         };
 
 });
