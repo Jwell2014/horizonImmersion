@@ -91,24 +91,15 @@ class DocumentController extends AbstractController
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$contenu->guessExtension();
 
-
                 // j'upload le fichier dans le dossier contenu dans services.yaml qui a la clé document.image
-                // Je l'upload avec son  ouveau nom
+                // Je l'upload avec son  nouveau nom
                 $contenu->move(
                     $this->getParameter('document_image'),
                     $newFilename
                 );
-
                 //Dans ma BDD j'ajoute un nom unique du fichier pour le trouver
                 $document->setContenu($newFilename);
-
             }
-
-
-
-
-
-
 
             $entityManager->flush();
 

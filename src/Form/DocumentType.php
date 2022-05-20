@@ -29,7 +29,6 @@ class DocumentType extends AbstractType
                 'attr'=> [ 'class'=> 'form-control'],
                 'constraints'=> [
                     new File([
-
                         'mimeTypes'=> [
                             'image/jpeg',
                             'image/png',
@@ -38,7 +37,6 @@ class DocumentType extends AbstractType
                         'mimeTypesMessage'=> 'Veuillez télécharger une image JPG ou PNG',
                     ]),
                 ],
-
             ])
             ->add('date')
             ->add('category',EntityType::class, [
