@@ -496,20 +496,35 @@
 {#                                </section>#}
 
 
-                                <div id="enigme" class="container">
-                                            <div class="row" >
-                                                <div class="col-lg-12 pt-2" id="fondEnigme">
-                                                    <h2 class="text-center">ENIGME</h2>
+                                <div id="enigme" class="container" >
+                                    <div class="row">
+                                        <div class="col-lg-12 pt-2 " id="fondEnigme">
+                                            <h2 class="text-center">ENIGME</h2>
+                                        </div>
+                                        <div class="col-lg-12 pt-3">
+                                            <div class="row justify-content-between">
+                                                <div class="col-12">
+                                                    <p class="text-center">Veuillez compléter ces suites pour
+                                                        ralentir le train</p>
                                                 </div>
-                                                <div class="col-lg-12 pt-5">
-                                                    <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
-                                                        those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"
-                                                        by Cicero are also reproduced in their exact original form, accompanied by English
-                                                        versions from the 1914 translation by H. Rackham.</p>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        {% for enigme1 in enigmes1 %}
+                                                            <div class="text-center mb-1 enigmeInput enigmeText">{{ enigme1.question }}</div>
+                                                        {% endfor %}
+                                                    </div>
+                                                    <div class="col-6 my-auto">
+                                                        <div class="d-flex flex-column justify-content-center transfertInput">
+                                                            <input type="text" class="p-3 text-center enigmeInput mb-1" placeholder="Entrez une proposition">
+                                                            <button type="button" class="btn btn-success col-8 mx-auto enigmeInput">TRANSFÉRER</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-
                                             </div>
+                                        </div>
+
                                     </div>
+                                </div>
 
 
                                 <img class="metro1" src="{{ asset("/images/metro1.svg") }}">
