@@ -6,7 +6,9 @@ use App\Entity\Category;
 use App\Entity\Document;
 use App\Form\AgentsType;
 use App\Form\RaptType;
+use App\Repository\DossierRepository;
 use App\Repository\EnigmeUnRepository;
+use App\Repository\FichierRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     #[Route('/home', name: 'app_default')]
-    public function index(EntityManagerInterface $entityManagerInterface, EnigmeUnRepository $enigmeUnRepository): Response
+    public function index(EntityManagerInterface $entityManagerInterface, EnigmeUnRepository $enigmeUnRepository, FichierRepository $fichierRepository, DossierRepository $dossierRepository): Response
     {
 
 
@@ -30,10 +32,15 @@ class DefaultController extends AbstractController
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
-//            'categories' => $categories,
+            'categories' => $categories,
             'documents' => $documents,
             'enigmes1' => $enigmeUnRepository->findAll(),
-            'answers'=> $enigmeUnRepository->findAllAnswers()
+            'answers'=> $enigmeUnRepository->findAllAnswers(),
+            'fichierPapier' => $fichierRepository->findBy(['DossierParent' => "5"]),
+            'fichierNum' => $fichierRepository->findBy(['DossierParent' => "6"]),
+            'dossierPapier' => $dossierRepository->findBy(['id' =>'5']),
+            'dossierNum' => $dossierRepository->findBy(['id' =>'6']),
+            'an'=> $dossierRepository->findBy(['id'=>'7'])
 
         ]);
 

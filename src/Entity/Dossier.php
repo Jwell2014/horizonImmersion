@@ -21,7 +21,7 @@ class Dossier
     #[ORM\Column(type: 'boolean')]
     private $isActive;
 
-    #[ORM\OneToMany(mappedBy: 'DossierParent', targetEntity: ImgSat::class)]
+    #[ORM\OneToMany(mappedBy: 'DossierParent', targetEntity: Fichier::class)]
     private $imgSats;
 
     public function __construct()
@@ -59,29 +59,29 @@ class Dossier
     }
 
     /**
-     * @return Collection<int, ImgSat>
+     * @return Collection<int, Fichier>
      */
     public function getImgSats(): Collection
     {
         return $this->imgSats;
     }
 
-    public function addImgSat(ImgSat $imgSat): self
+    public function addImgSat(Fichier $fichier): self
     {
-        if (!$this->imgSats->contains($imgSat)) {
-            $this->imgSats[] = $imgSat;
-            $imgSat->setDossierParent($this);
+        if (!$this->imgSats->contains($fichier)) {
+            $this->imgSats[] = $fichier;
+            $fichier->setDossierParent($this);
         }
 
         return $this;
     }
 
-    public function removeImgSat(ImgSat $imgSat): self
+    public function removeImgSat(Fichier $fichier): self
     {
-        if ($this->imgSats->removeElement($imgSat)) {
+        if ($this->imgSats->removeElement($fichier)) {
             // set the owning side to null (unless already changed)
-            if ($imgSat->getDossierParent() === $this) {
-                $imgSat->setDossierParent(null);
+            if ($fichier->getDossierParent() === $this) {
+                $fichier->setDossierParent(null);
             }
         }
 

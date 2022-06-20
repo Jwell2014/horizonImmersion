@@ -8,29 +8,60 @@
         <h1 class="mb-5">Plan Assemblée Nationale</h1>
         <div class="col-10 ms-5">
             <div class="an1">
-                <div class="an1div1 text-white button"><button>A6</button><span class="target redDot ms-5 mt-1"></span> </div>
-                <div class="an1div2 button"><button>Commission des lois</button><span class="target ms-5 mt-1 hidden"></span></div>
-                <div class="an1div3">Affaires culturelles</div>
-                <div class="an1div4 text-white">A8 & escalier +1</div>
-                <div class="an1div5">Stock</div>
-                <div class="an1div6">Stock </div>
-                <div class="an1div7">Bibliothèque</div>
-                <div class="an1div8 text-white">A7</div>
+                <div class="an1div1 text-white button" style="color:#fff">
+                    <button class="togg1">A6</button>
+                    <span class="target  ms-5 mt-1 hidden d1"></span>
+                </div>
+                <div class="an1div2 button">
+                    <button>Commission des lois</button>
+                    <span class="target ms-5 mt-1 hidden d1"></span>
+
+                </div>
+                <div class="an1div3 button">
+                    <button>Affaires culturelles</button>
+                    <span class="target ms-5 mt-1 hidden d1"></span>
+                </div>
+                <div class="an1div4 text-white button" style="color:#fff">
+
+                    <button>A8 & escalier +1</button>
+                    <span class="target ms-5 mt-1 hidden d1"></span>
+                </div>
+                <div class="an1div5 button">
+
+                    <button>Stock</button>
+                    <span class="target ms-5 mt-1 hidden d1"></span>
+
+                </div>
+                <div class="an1div6 button">
+
+                    <button>Stock</button>
+                    <span class="target ms-5 mt-1 hidden d1"></span>
+                </div>
+                <div class="an1div7 button">
+
+                    <button>Bibliothèque</button>
+                    <span class="target ms-5 mt-1 hidden d1"></span>
+                </div>
+                <div class="an1div8 text-white button" style="color:#fff">
+
+                    <button>A7</button>
+                    <span class="target ms-5 mt-1 hidden d1"></span>
+                </div>
             </div>
         </div>
         <script>
-            const an1s = document.querySelectorAll('.an1')
-            const btn = document.querySelectorAll(' .an1 .button')
-            const rd = document.querySelectorAll('.redDot')
+            let btns = document.querySelectorAll('.button');
+            let spans = document.querySelectorAll('.d1');
 
-            an1s.forEach((an1) => {
+            let hidden = true;
 
-            btn.addEventListener('click', () => {
-                console.log('ok');
-                rd.classList.toggle('redDot');
-                rd.classList.toggle('hidden');
-            } )
-
+            btns.forEach( btn => {
+                btn.addEventListener('click', () => {
+                    spans.forEach(span => {
+                        span.classList.add('hidden')
+                    });
+                    btn.querySelector('span').classList.toggle('hidden');
+                });
             });
         </script>
         <hr>

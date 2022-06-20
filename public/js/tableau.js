@@ -250,9 +250,9 @@ function setColor() {
  * @param {MouseEvent} event
  */
 function clearMenus(event) {
-	console.log('Clear menus');
-	console.log('ClientX: ' + event.clientX);
-	console.log('ClientY: ' + event.clientY);
+	// console.log('Clear menus');
+	// console.log('ClientX: ' + event.clientX);
+	// console.log('ClientY: ' + event.clientY);
 
 	let noteMenus = document.getElementsByClassName('note-menu'); // Get all menus
 

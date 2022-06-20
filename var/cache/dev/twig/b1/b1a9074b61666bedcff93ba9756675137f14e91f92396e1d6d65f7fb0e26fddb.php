@@ -353,7 +353,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 ";
         // line 247
         echo "
-            <div id=\"chrono\" class=\"col-lg-12 mx-auto\">
+            <div id=\"paramGlobaux\" class=\"col-lg-12 mx-auto\">
                 <form name=\"form_main\">
                     <div class=\"d-flex justify-content-evenly chronoControl\">
                         <button type=\"button\" name=\"start\" class=\"btn-grad w-25 mx-auto mt-2\">
@@ -857,7 +857,7 @@ class __TwigTemplate_0bd92d3e7cdf65d560dc85ddfdc3bacc3f3aecff73f91cf05e03eca455f
 {#                </div>#}
 {#            </div>#}
 
-            <div id=\"chrono\" class=\"col-lg-12 mx-auto\">
+            <div id=\"paramGlobaux\" class=\"col-lg-12 mx-auto\">
                 <form name=\"form_main\">
                     <div class=\"d-flex justify-content-evenly chronoControl\">
                         <button type=\"button\" name=\"start\" class=\"btn-grad w-25 mx-auto mt-2\">

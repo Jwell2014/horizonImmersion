@@ -206,6 +206,7 @@
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>bootstrap_5_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">D:\Orange Thoughts\HB\Stage\App Horizon Immersion\horizonImmersion/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -364,13 +365,6 @@
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\CategoryController"/>
       </call>
     </service>
-    <service id="App\Controller\ChronoController" class="App\Controller\ChronoController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\ChronoController"/>
-      </call>
-    </service>
     <service id="App\Controller\DefaultController" class="App\Controller\DefaultController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -413,11 +407,18 @@
         <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\EnigmeUnController"/>
       </call>
     </service>
-    <service id="App\Controller\ImgSatController" class="App\Controller\ImgSatController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\FichierController" class="App\Controller\FichierController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\ImgSatController"/>
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\FichierController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ParamGlobaux" class="App\Controller\ParamGlobaux" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.l1ae.Qz.App\Controller\ParamGlobaux"/>
       </call>
     </service>
     <service id="App\Controller\ParticipantsController" class="App\Controller\ParticipantsController" public="true" autowire="true" autoconfigure="true">
@@ -475,10 +476,7 @@
     <service id="App\Form\EnigmeUnType" class="App\Form\EnigmeUnType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Form\ImgSatFormType" class="App\Form\ImgSatFormType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\ImgSatType" class="App\Form\ImgSatType" autowire="true" autoconfigure="true">
+    <service id="App\Form\FichierType" class="App\Form\FichierType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ParticipantsType" class="App\Form\ParticipantsType" autowire="true" autoconfigure="true">
@@ -521,7 +519,7 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\ImgSatRepository" class="App\Repository\ImgSatRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\FichierRepository" class="App\Repository\FichierRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1310,8 +1308,7 @@
         <argument>App\Form\EnigmeDeuxType</argument>
         <argument>App\Form\EnigmeTroisType</argument>
         <argument>App\Form\EnigmeUnType</argument>
-        <argument>App\Form\ImgSatFormType</argument>
-        <argument>App\Form\ImgSatType</argument>
+        <argument>App\Form\FichierType</argument>
         <argument>App\Form\ParticipantsType</argument>
         <argument>App\Form\RaptType</argument>
         <argument>App\Form\SessionsType</argument>
@@ -3381,7 +3378,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.bfLKSBT"/>
+      <argument type="service" id=".service_locator.XA1qHWR"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4267,7 +4264,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.qH27ByS"/>
+      <argument type="service" id=".service_locator.eeAScZV"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6152,9 +6149,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CategoryController" class="App\Controller\CategoryController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CategoryController" class="App\Controller\CategoryController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CategoryController" class="App\Controller\CategoryController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ChronoController" class="App\Controller\ChronoController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ChronoController" class="App\Controller\ChronoController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ChronoController" class="App\Controller\ChronoController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DefaultController" class="App\Controller\DefaultController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6173,9 +6167,12 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EnigmeUnController" class="App\Controller\EnigmeUnController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EnigmeUnController" class="App\Controller\EnigmeUnController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\EnigmeUnController" class="App\Controller\EnigmeUnController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ImgSatController" class="App\Controller\ImgSatController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ImgSatController" class="App\Controller\ImgSatController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ImgSatController" class="App\Controller\ImgSatController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FichierController" class="App\Controller\FichierController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FichierController" class="App\Controller\FichierController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\FichierController" class="App\Controller\FichierController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ParamGlobaux" class="App\Controller\ParamGlobaux" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ParamGlobaux" class="App\Controller\ParamGlobaux" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ParamGlobaux" class="App\Controller\ParamGlobaux" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ParticipantsController" class="App\Controller\ParticipantsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ParticipantsController" class="App\Controller\ParticipantsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ParticipantsController" class="App\Controller\ParticipantsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6206,10 +6203,8 @@
     <service id=".abstract.instanceof.App\Form\EnigmeTroisType" class="App\Form\EnigmeTroisType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EnigmeUnType" class="App\Form\EnigmeUnType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EnigmeUnType" class="App\Form\EnigmeUnType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ImgSatFormType" class="App\Form\ImgSatFormType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\ImgSatFormType" class="App\Form\ImgSatFormType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ImgSatType" class="App\Form\ImgSatType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\ImgSatType" class="App\Form\ImgSatType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FichierType" class="App\Form\FichierType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\FichierType" class="App\Form\FichierType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ParticipantsType" class="App\Form\ParticipantsType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ParticipantsType" class="App\Form\ParticipantsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RaptType" class="App\Form\RaptType" autowire="true" abstract="true"/>
@@ -6232,8 +6227,8 @@
     <service id=".abstract.instanceof.App\Repository\EnigmeTroisRepository" class="App\Repository\EnigmeTroisRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EnigmeUnRepository" class="App\Repository\EnigmeUnRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EnigmeUnRepository" class="App\Repository\EnigmeUnRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ImgSatRepository" class="App\Repository\ImgSatRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ImgSatRepository" class="App\Repository\ImgSatRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FichierRepository" class="App\Repository\FichierRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\FichierRepository" class="App\Repository\FichierRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SessionsRepository" class="App\Repository\SessionsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SessionsRepository" class="App\Repository\SessionsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -6640,32 +6635,13 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.8tldoMA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.M5pqm21" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="chronoRepository" type="service_closure" id="App\Repository\ChronoRepository"/>
         <argument key="dossierRepository" type="service_closure" id="App\Repository\DossierRepository"/>
-        <argument key="imgSatRepository" type="service_closure" id="App\Repository\ImgSatRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.1QtRtyo" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="chrono" type="service_closure" id=".errored..service_locator.1QtRtyo.App\Entity\Chrono"/>
-      </argument>
-    </service>
-    <service id=".service_locator.mxZK_nH" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="chrono" type="service_closure" id=".errored..service_locator.mxZK_nH.App\Entity\Chrono"/>
-        <argument key="chronoRepository" type="service_closure" id="App\Repository\ChronoRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.fB0auwU" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
         <argument key="enigmeUnRepository" type="service_closure" id="App\Repository\EnigmeUnRepository"/>
         <argument key="entityManagerInterface" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="fichierRepository" type="service_closure" id="App\Repository\FichierRepository"/>
       </argument>
     </service>
     <service id=".service_locator.te8pGam" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6781,38 +6757,59 @@
         <argument key="enigmeUnRepository" type="service_closure" id="App\Repository\EnigmeUnRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.XWNSgl6" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ghpjfjo" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="chronoRepository" type="service_closure" id="App\Repository\ChronoRepository"/>
-        <argument key="imgSatRepository" type="service_closure" id="App\Repository\ImgSatRepository"/>
+        <argument key="fichierRepository" type="service_closure" id="App\Repository\FichierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.638U2tr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gUNjtSQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="imgSatRepository" type="service_closure" id="App\Repository\ImgSatRepository"/>
+        <argument key="fichierRepository" type="service_closure" id="App\Repository\FichierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.yVJaD6P" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Ko6.AXl" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="imgSat" type="service_closure" id=".errored..service_locator.yVJaD6P.App\Entity\ImgSat"/>
+        <argument key="fichier" type="service_closure" id=".errored..service_locator.Ko6.AXl.App\Entity\Fichier"/>
       </argument>
     </service>
-    <service id=".service_locator.WMHwM3B" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.tvspgdm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="imgSat" type="service_closure" id=".errored..service_locator.WMHwM3B.App\Entity\ImgSat"/>
-        <argument key="imgSatRepository" type="service_closure" id="App\Repository\ImgSatRepository"/>
+        <argument key="fichier" type="service_closure" id=".errored..service_locator.tvspgdm.App\Entity\Fichier"/>
+        <argument key="fichierRepository" type="service_closure" id="App\Repository\FichierRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.UGKsOns" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.KMEQ69z" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="chronoRepository" type="service_closure" id="App\Repository\ChronoRepository"/>
-        <argument key="imgSat" type="service_closure" id=".errored..service_locator.UGKsOns.App\Entity\ImgSat"/>
-        <argument key="imgSatRepository" type="service_closure" id="App\Repository\ImgSatRepository"/>
+        <argument key="fichier" type="service_closure" id=".errored..service_locator.KMEQ69z.App\Entity\Fichier"/>
+        <argument key="fichierRepository" type="service_closure" id="App\Repository\FichierRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.mwvVc1X" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="chronoRepository" type="service_closure" id="App\Repository\ChronoRepository"/>
+        <argument key="dossierRepository" type="service_closure" id="App\Repository\DossierRepository"/>
+        <argument key="imgSatRepository" type="service_closure" id="App\Repository\FichierRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1QtRtyo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="chrono" type="service_closure" id=".errored..service_locator.1QtRtyo.App\Entity\Chrono"/>
+      </argument>
+    </service>
+    <service id=".service_locator.mxZK_nH" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="chrono" type="service_closure" id=".errored..service_locator.mxZK_nH.App\Entity\Chrono"/>
+        <argument key="chronoRepository" type="service_closure" id="App\Repository\ChronoRepository"/>
       </argument>
     </service>
     <service id=".service_locator.WUtyewl" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6862,7 +6859,7 @@
         <argument key="sessionsRepository" type="service_closure" id="App\Repository\SessionsRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.evsQJ02" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator..inQr21" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminInterfaceController::index" type="service_closure" id=".service_locator.d_jfif9"/>
@@ -6876,12 +6873,7 @@
         <argument key="App\Controller\CategoryController::index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\CategoryController::new" type="service_closure" id=".service_locator.SRtF.2R"/>
         <argument key="App\Controller\CategoryController::show" type="service_closure" id=".service_locator.478xwl1"/>
-        <argument key="App\Controller\ChronoController::delete" type="service_closure" id=".service_locator.mxZK_nH"/>
-        <argument key="App\Controller\ChronoController::edit" type="service_closure" id=".service_locator.mxZK_nH"/>
-        <argument key="App\Controller\ChronoController::index" type="service_closure" id=".service_locator.8tldoMA"/>
-        <argument key="App\Controller\ChronoController::new" type="service_closure" id=".service_locator.d_jfif9"/>
-        <argument key="App\Controller\ChronoController::show" type="service_closure" id=".service_locator.1QtRtyo"/>
-        <argument key="App\Controller\DefaultController::index" type="service_closure" id=".service_locator.fB0auwU"/>
+        <argument key="App\Controller\DefaultController::index" type="service_closure" id=".service_locator.M5pqm21"/>
         <argument key="App\Controller\DefaultController::show" type="service_closure" id=".service_locator.te8pGam"/>
         <argument key="App\Controller\DocumentController::delete" type="service_closure" id=".service_locator.xNOm0dz"/>
         <argument key="App\Controller\DocumentController::edit" type="service_closure" id=".service_locator.oIPgXqY"/>
@@ -6907,12 +6899,17 @@
         <argument key="App\Controller\EnigmeUnController::edit" type="service_closure" id=".service_locator.rQ9xRT4"/>
         <argument key="App\Controller\EnigmeUnController::index" type="service_closure" id=".service_locator.Oo9heSQ"/>
         <argument key="App\Controller\EnigmeUnController::new" type="service_closure" id=".service_locator.2w7G0Om"/>
-        <argument key="App\Controller\ImgSatController::delete" type="service_closure" id=".service_locator.WMHwM3B"/>
-        <argument key="App\Controller\ImgSatController::edit" type="service_closure" id=".service_locator.UGKsOns"/>
-        <argument key="App\Controller\ImgSatController::index" type="service_closure" id=".service_locator.XWNSgl6"/>
-        <argument key="App\Controller\ImgSatController::new" type="service_closure" id=".service_locator.638U2tr"/>
-        <argument key="App\Controller\ImgSatController::show" type="service_closure" id=".service_locator.yVJaD6P"/>
-        <argument key="App\Controller\ImgSatController::toggleAll" type="service_closure" id=".service_locator.WMHwM3B"/>
+        <argument key="App\Controller\FichierController::delete" type="service_closure" id=".service_locator.tvspgdm"/>
+        <argument key="App\Controller\FichierController::edit" type="service_closure" id=".service_locator.KMEQ69z"/>
+        <argument key="App\Controller\FichierController::index" type="service_closure" id=".service_locator.ghpjfjo"/>
+        <argument key="App\Controller\FichierController::new" type="service_closure" id=".service_locator.gUNjtSQ"/>
+        <argument key="App\Controller\FichierController::show" type="service_closure" id=".service_locator.Ko6.AXl"/>
+        <argument key="App\Controller\FichierController::toggleAll" type="service_closure" id=".service_locator.tvspgdm"/>
+        <argument key="App\Controller\ParamGlobaux::delete" type="service_closure" id=".service_locator.mxZK_nH"/>
+        <argument key="App\Controller\ParamGlobaux::edit" type="service_closure" id=".service_locator.mxZK_nH"/>
+        <argument key="App\Controller\ParamGlobaux::index" type="service_closure" id=".service_locator.mwvVc1X"/>
+        <argument key="App\Controller\ParamGlobaux::new" type="service_closure" id=".service_locator.d_jfif9"/>
+        <argument key="App\Controller\ParamGlobaux::show" type="service_closure" id=".service_locator.1QtRtyo"/>
         <argument key="App\Controller\ParticipantsController::delete" type="service_closure" id=".service_locator.LruWq6u"/>
         <argument key="App\Controller\ParticipantsController::edit" type="service_closure" id=".service_locator.4MF6DUv"/>
         <argument key="App\Controller\ParticipantsController::index" type="service_closure" id=".service_locator.Y6e_ssz"/>
@@ -6946,12 +6943,7 @@
         <argument key="App\Controller\CategoryController:index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\CategoryController:new" type="service_closure" id=".service_locator.SRtF.2R"/>
         <argument key="App\Controller\CategoryController:show" type="service_closure" id=".service_locator.478xwl1"/>
-        <argument key="App\Controller\ChronoController:delete" type="service_closure" id=".service_locator.mxZK_nH"/>
-        <argument key="App\Controller\ChronoController:edit" type="service_closure" id=".service_locator.mxZK_nH"/>
-        <argument key="App\Controller\ChronoController:index" type="service_closure" id=".service_locator.8tldoMA"/>
-        <argument key="App\Controller\ChronoController:new" type="service_closure" id=".service_locator.d_jfif9"/>
-        <argument key="App\Controller\ChronoController:show" type="service_closure" id=".service_locator.1QtRtyo"/>
-        <argument key="App\Controller\DefaultController:index" type="service_closure" id=".service_locator.fB0auwU"/>
+        <argument key="App\Controller\DefaultController:index" type="service_closure" id=".service_locator.M5pqm21"/>
         <argument key="App\Controller\DefaultController:show" type="service_closure" id=".service_locator.te8pGam"/>
         <argument key="App\Controller\DocumentController:delete" type="service_closure" id=".service_locator.xNOm0dz"/>
         <argument key="App\Controller\DocumentController:edit" type="service_closure" id=".service_locator.oIPgXqY"/>
@@ -6977,12 +6969,17 @@
         <argument key="App\Controller\EnigmeUnController:edit" type="service_closure" id=".service_locator.rQ9xRT4"/>
         <argument key="App\Controller\EnigmeUnController:index" type="service_closure" id=".service_locator.Oo9heSQ"/>
         <argument key="App\Controller\EnigmeUnController:new" type="service_closure" id=".service_locator.2w7G0Om"/>
-        <argument key="App\Controller\ImgSatController:delete" type="service_closure" id=".service_locator.WMHwM3B"/>
-        <argument key="App\Controller\ImgSatController:edit" type="service_closure" id=".service_locator.UGKsOns"/>
-        <argument key="App\Controller\ImgSatController:index" type="service_closure" id=".service_locator.XWNSgl6"/>
-        <argument key="App\Controller\ImgSatController:new" type="service_closure" id=".service_locator.638U2tr"/>
-        <argument key="App\Controller\ImgSatController:show" type="service_closure" id=".service_locator.yVJaD6P"/>
-        <argument key="App\Controller\ImgSatController:toggleAll" type="service_closure" id=".service_locator.WMHwM3B"/>
+        <argument key="App\Controller\FichierController:delete" type="service_closure" id=".service_locator.tvspgdm"/>
+        <argument key="App\Controller\FichierController:edit" type="service_closure" id=".service_locator.KMEQ69z"/>
+        <argument key="App\Controller\FichierController:index" type="service_closure" id=".service_locator.ghpjfjo"/>
+        <argument key="App\Controller\FichierController:new" type="service_closure" id=".service_locator.gUNjtSQ"/>
+        <argument key="App\Controller\FichierController:show" type="service_closure" id=".service_locator.Ko6.AXl"/>
+        <argument key="App\Controller\FichierController:toggleAll" type="service_closure" id=".service_locator.tvspgdm"/>
+        <argument key="App\Controller\ParamGlobaux:delete" type="service_closure" id=".service_locator.mxZK_nH"/>
+        <argument key="App\Controller\ParamGlobaux:edit" type="service_closure" id=".service_locator.mxZK_nH"/>
+        <argument key="App\Controller\ParamGlobaux:index" type="service_closure" id=".service_locator.mwvVc1X"/>
+        <argument key="App\Controller\ParamGlobaux:new" type="service_closure" id=".service_locator.d_jfif9"/>
+        <argument key="App\Controller\ParamGlobaux:show" type="service_closure" id=".service_locator.1QtRtyo"/>
         <argument key="App\Controller\ParticipantsController:delete" type="service_closure" id=".service_locator.LruWq6u"/>
         <argument key="App\Controller\ParticipantsController:edit" type="service_closure" id=".service_locator.4MF6DUv"/>
         <argument key="App\Controller\ParticipantsController:index" type="service_closure" id=".service_locator.Y6e_ssz"/>
@@ -7063,7 +7060,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.bfLKSBT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.XA1qHWR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AgentsType" type="service_closure" id="App\Form\AgentsType"/>
@@ -7075,8 +7072,7 @@
         <argument key="App\Form\EnigmeDeuxType" type="service_closure" id="App\Form\EnigmeDeuxType"/>
         <argument key="App\Form\EnigmeTroisType" type="service_closure" id="App\Form\EnigmeTroisType"/>
         <argument key="App\Form\EnigmeUnType" type="service_closure" id="App\Form\EnigmeUnType"/>
-        <argument key="App\Form\ImgSatFormType" type="service_closure" id="App\Form\ImgSatFormType"/>
-        <argument key="App\Form\ImgSatType" type="service_closure" id="App\Form\ImgSatType"/>
+        <argument key="App\Form\FichierType" type="service_closure" id="App\Form\FichierType"/>
         <argument key="App\Form\ParticipantsType" type="service_closure" id="App\Form\ParticipantsType"/>
         <argument key="App\Form\RaptType" type="service_closure" id="App\Form\RaptType"/>
         <argument key="App\Form\SessionsType" type="service_closure" id="App\Form\SessionsType"/>
@@ -7165,7 +7161,7 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.qH27ByS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.eeAScZV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
@@ -7175,7 +7171,7 @@
         <argument key="App\Repository\EnigmeDeuxRepository" type="service_closure" id="App\Repository\EnigmeDeuxRepository"/>
         <argument key="App\Repository\EnigmeTroisRepository" type="service_closure" id="App\Repository\EnigmeTroisRepository"/>
         <argument key="App\Repository\EnigmeUnRepository" type="service_closure" id="App\Repository\EnigmeUnRepository"/>
-        <argument key="App\Repository\ImgSatRepository" type="service_closure" id="App\Repository\ImgSatRepository"/>
+        <argument key="App\Repository\FichierRepository" type="service_closure" id="App\Repository\FichierRepository"/>
         <argument key="App\Repository\SessionsRepository" type="service_closure" id="App\Repository\SessionsRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
@@ -7459,12 +7455,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
-    <service id=".service_locator.l1ae.Qz.App\Controller\ChronoController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ChronoController"/>
-      <argument>App\Controller\ChronoController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.l1ae.Qz" method="withContext"/>
-    </service>
     <service id=".service_locator.l1ae.Qz.App\Controller\DefaultController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\DefaultController"/>
       <argument>App\Controller\DefaultController</argument>
@@ -7501,9 +7491,15 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
-    <service id=".service_locator.l1ae.Qz.App\Controller\ImgSatController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ImgSatController"/>
-      <argument>App\Controller\ImgSatController</argument>
+    <service id=".service_locator.l1ae.Qz.App\Controller\FichierController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\FichierController"/>
+      <argument>App\Controller\FichierController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.l1ae.Qz" method="withContext"/>
+    </service>
+    <service id=".service_locator.l1ae.Qz.App\Controller\ParamGlobaux" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ParamGlobaux"/>
+      <argument>App\Controller\ParamGlobaux</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.l1ae.Qz" method="withContext"/>
     </service>
@@ -7703,12 +7699,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.evsQJ02"/>
+      <argument type="service" id=".service_locator..inQr21"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.evsQJ02"/>
+      <argument type="service" id=".service_locator..inQr21"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7743,8 +7739,6 @@
     <service id=".errored..service_locator.478xwl1.App\Entity\Category" class="App\Entity\Category"/>
     <service id=".errored..service_locator.GLxPETP.App\Entity\Category" class="App\Entity\Category"/>
     <service id=".errored..service_locator.bmG4G8k.App\Entity\Category" class="App\Entity\Category"/>
-    <service id=".errored..service_locator.1QtRtyo.App\Entity\Chrono" class="App\Entity\Chrono"/>
-    <service id=".errored..service_locator.mxZK_nH.App\Entity\Chrono" class="App\Entity\Chrono"/>
     <service id=".errored..service_locator.te8pGam.App\Entity\Document" class="App\Entity\Document"/>
     <service id=".errored..service_locator.oIPgXqY.App\Entity\Document" class="App\Entity\Document"/>
     <service id=".errored..service_locator.xNOm0dz.App\Entity\Document" class="App\Entity\Document"/>
@@ -7755,9 +7749,11 @@
     <service id=".errored..service_locator.gBGKmVZ.App\Entity\EnigmeTrois" class="App\Entity\EnigmeTrois"/>
     <service id=".errored..service_locator.d_HSuOA.App\Entity\EnigmeTrois" class="App\Entity\EnigmeTrois"/>
     <service id=".errored..service_locator.rQ9xRT4.App\Entity\EnigmeUn" class="App\Entity\EnigmeUn"/>
-    <service id=".errored..service_locator.yVJaD6P.App\Entity\ImgSat" class="App\Entity\ImgSat"/>
-    <service id=".errored..service_locator.WMHwM3B.App\Entity\ImgSat" class="App\Entity\ImgSat"/>
-    <service id=".errored..service_locator.UGKsOns.App\Entity\ImgSat" class="App\Entity\ImgSat"/>
+    <service id=".errored..service_locator.Ko6.AXl.App\Entity\Fichier" class="App\Entity\Fichier"/>
+    <service id=".errored..service_locator.tvspgdm.App\Entity\Fichier" class="App\Entity\Fichier"/>
+    <service id=".errored..service_locator.KMEQ69z.App\Entity\Fichier" class="App\Entity\Fichier"/>
+    <service id=".errored..service_locator.1QtRtyo.App\Entity\Chrono" class="App\Entity\Chrono"/>
+    <service id=".errored..service_locator.mxZK_nH.App\Entity\Chrono" class="App\Entity\Chrono"/>
     <service id=".errored..service_locator.LruWq6u.App\Entity\User" class="App\Entity\User"/>
     <service id=".errored..service_locator.nO7ExGf.App\Entity\Session" class="App\Entity\Session"/>
     <service id=".errored..service_locator.vcUdELr.App\Entity\Session" class="App\Entity\Session"/>
@@ -8656,7 +8652,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.evsQJ02"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator..inQr21"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8679,19 +8675,19 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.1jCMLSh" alias=".service_locator.Y6e_ssz"/>
     <service id=".service_locator.B2PATlr" alias=".service_locator..XtEIDh"/>
-    <service id=".service_locator.iTlJBg0" alias=".service_locator.8tldoMA"/>
-    <service id=".service_locator.C7C.SXt" alias=".service_locator.fB0auwU"/>
+    <service id=".service_locator.QshOi1E" alias=".service_locator.M5pqm21"/>
     <service id=".service_locator.F9CRmPp" alias=".service_locator.jqyC7GK"/>
     <service id=".service_locator.Bklhttd" alias=".service_locator.jAq7WCJ"/>
     <service id=".service_locator.jd5yIM1" alias=".service_locator.d_HSuOA"/>
     <service id=".service_locator.JR_4A9E" alias=".service_locator.Oo9heSQ"/>
-    <service id=".service_locator.gkMGB3y" alias=".service_locator.XWNSgl6"/>
-    <service id=".service_locator.Y5UqCT_" alias=".service_locator.UGKsOns"/>
+    <service id=".service_locator.ViB3N5e" alias=".service_locator.ghpjfjo"/>
+    <service id=".service_locator.DBaI3y_" alias=".service_locator.KMEQ69z"/>
+    <service id=".service_locator.4DPwh6y" alias=".service_locator.mwvVc1X"/>
     <service id=".service_locator.PaJQGxZ" alias=".service_locator.LruWq6u"/>
     <service id=".service_locator.EecLuM8" alias=".service_locator.lJ2V1mj"/>
-    <service id=".service_locator.0p_4XKi" alias=".service_locator.evsQJ02"/>
+    <service id=".service_locator.MCnoVbT" alias=".service_locator..inQr21"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.PIDg2jN" alias=".service_locator.bfLKSBT"/>
+    <service id=".service_locator.Zuh6FNE" alias=".service_locator.XA1qHWR"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.jkb6XQV" alias=".service_locator.l1ae.Qz"/>
@@ -8729,10 +8725,7 @@
     <service id=".service_locator.rTqxrUM" alias=".service_locator.478xwl1"/>
     <service id=".service_locator.9xxoN_q" alias=".service_locator.GLxPETP"/>
     <service id=".service_locator.Tzkrsg8" alias=".service_locator.bmG4G8k"/>
-    <service id=".service_locator.Q5YpLnX" alias=".service_locator.8tldoMA"/>
-    <service id=".service_locator.KqVrUSP" alias=".service_locator.1QtRtyo"/>
-    <service id=".service_locator.jAzHHkX" alias=".service_locator.mxZK_nH"/>
-    <service id=".service_locator.BfXwCQS" alias=".service_locator.fB0auwU"/>
+    <service id=".service_locator.rcD13Re" alias=".service_locator.M5pqm21"/>
     <service id=".service_locator.yLUgvSE" alias=".service_locator.te8pGam"/>
     <service id=".service_locator.a_PcIMb" alias=".service_locator.oIPgXqY"/>
     <service id=".service_locator.tO1dmsF" alias=".service_locator.xNOm0dz"/>
@@ -8750,11 +8743,14 @@
     <service id=".service_locator.0_F34GT" alias=".service_locator.Oo9heSQ"/>
     <service id=".service_locator.JWkW2oP" alias=".service_locator.2w7G0Om"/>
     <service id=".service_locator.Cx60Y8_" alias=".service_locator.rQ9xRT4"/>
-    <service id=".service_locator.TdB.Uxn" alias=".service_locator.XWNSgl6"/>
-    <service id=".service_locator.YWofMPF" alias=".service_locator.638U2tr"/>
-    <service id=".service_locator._wAzl8U" alias=".service_locator.yVJaD6P"/>
-    <service id=".service_locator.FvYNHm_" alias=".service_locator.WMHwM3B"/>
-    <service id=".service_locator.gwhAhaP" alias=".service_locator.UGKsOns"/>
+    <service id=".service_locator.bMaRsc2" alias=".service_locator.ghpjfjo"/>
+    <service id=".service_locator.lsjJqjs" alias=".service_locator.gUNjtSQ"/>
+    <service id=".service_locator.1UhyEsI" alias=".service_locator.Ko6.AXl"/>
+    <service id=".service_locator.A688CNA" alias=".service_locator.tvspgdm"/>
+    <service id=".service_locator.IDmQnho" alias=".service_locator.KMEQ69z"/>
+    <service id=".service_locator.KWdExzX" alias=".service_locator.mwvVc1X"/>
+    <service id=".service_locator.KqVrUSP" alias=".service_locator.1QtRtyo"/>
+    <service id=".service_locator.jAzHHkX" alias=".service_locator.mxZK_nH"/>
     <service id=".service_locator.8NyPG9c" alias=".service_locator.WUtyewl"/>
     <service id=".service_locator.ackJGrf" alias=".service_locator.LruWq6u"/>
     <service id=".service_locator.kXCVHeG" alias=".service_locator.UDgw6Ol"/>

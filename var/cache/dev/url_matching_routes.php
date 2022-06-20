@@ -19,8 +19,6 @@ return [
         '/agents/new' => [[['_route' => 'app_agents_new', '_controller' => 'App\\Controller\\AgentsController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/category/all' => [[['_route' => 'category_index', '_controller' => 'App\\Controller\\CategoryController::index'], null, ['GET' => 0], null, false, false, null]],
         '/category/new' => [[['_route' => 'category_new', '_controller' => 'App\\Controller\\CategoryController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/chrono' => [[['_route' => 'app_chrono_index', '_controller' => 'App\\Controller\\ChronoController::index'], null, ['GET' => 0, 'POST' => 1], null, true, false, null]],
-        '/chrono/new' => [[['_route' => 'app_chrono_new', '_controller' => 'App\\Controller\\ChronoController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/home' => [[['_route' => 'app_default', '_controller' => 'App\\Controller\\DefaultController::index'], null, null, null, false, false, null]],
         '/chat' => [[['_route' => 'chat', '_controller' => 'App\\Controller\\DefaultController::chat'], null, null, null, false, false, null]],
         '/tableau' => [[['_route' => 'tableau', '_controller' => 'App\\Controller\\DefaultController::tableau'], null, null, null, false, false, null]],
@@ -34,8 +32,10 @@ return [
         '/enigmeTrois/new' => [[['_route' => 'app_enigme_trois_new', '_controller' => 'App\\Controller\\EnigmeTroisController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/enigmeUn' => [[['_route' => 'app_enigme_un_index', '_controller' => 'App\\Controller\\EnigmeUnController::index'], null, ['GET' => 0], null, true, false, null]],
         '/enigmeUn/new' => [[['_route' => 'app_enigme_un_new', '_controller' => 'App\\Controller\\EnigmeUnController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/img/sat' => [[['_route' => 'app_img_sat_index', '_controller' => 'App\\Controller\\ImgSatController::index'], null, ['GET' => 0], null, true, false, null]],
-        '/img/sat/new' => [[['_route' => 'app_img_sat_new', '_controller' => 'App\\Controller\\ImgSatController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/fichier' => [[['_route' => 'app_fichier_index', '_controller' => 'App\\Controller\\FichierController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/fichier/new' => [[['_route' => 'app_fichier_new', '_controller' => 'App\\Controller\\FichierController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/paramGlobaux' => [[['_route' => 'app_chrono_index', '_controller' => 'App\\Controller\\ParamGlobaux::index'], null, ['GET' => 0, 'POST' => 1], null, true, false, null]],
+        '/paramGlobaux/new' => [[['_route' => 'app_chrono_new', '_controller' => 'App\\Controller\\ParamGlobaux::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/participants' => [[['_route' => 'app_participants_index', '_controller' => 'App\\Controller\\ParticipantsController::index'], null, ['GET' => 0], null, true, false, null]],
         '/participants/new' => [[['_route' => 'app_participants_new', '_controller' => 'App\\Controller\\ParticipantsController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
@@ -67,71 +67,71 @@ return [
                     .'|/edit(*:201)'
                     .'|(*:209)'
                 .')'
-                .'|/c(?'
-                    .'|ategory/([^/]++)(?'
-                        .'|(*:242)'
-                        .'|/edit(*:255)'
-                        .'|(*:263)'
-                    .')'
-                    .'|hrono/([^/]++)(?'
-                        .'|(*:289)'
-                        .'|/edit(*:302)'
-                        .'|(*:310)'
-                    .')'
+                .'|/category/([^/]++)(?'
+                    .'|(*:239)'
+                    .'|/edit(*:252)'
+                    .'|(*:260)'
                 .')'
                 .'|/d(?'
-                    .'|efault/([^/]++)(*:340)'
+                    .'|efault/([^/]++)(*:289)'
                     .'|o(?'
                         .'|cument/([^/]++)(?'
-                            .'|(*:370)'
-                            .'|/edit(*:383)'
-                            .'|(*:391)'
+                            .'|(*:319)'
+                            .'|/edit(*:332)'
+                            .'|(*:340)'
                         .')'
                         .'|ssier/([^/]++)(?'
-                            .'|(*:417)'
-                            .'|/edit(*:430)'
-                            .'|(*:438)'
+                            .'|(*:366)'
+                            .'|/edit(*:379)'
+                            .'|(*:387)'
                         .')'
                     .')'
                 .')'
                 .'|/enigme(?'
                     .'|Deux/([^/]++)(?'
-                        .'|(*:475)'
-                        .'|/edit(*:488)'
-                        .'|(*:496)'
+                        .'|(*:424)'
+                        .'|/edit(*:437)'
+                        .'|(*:445)'
                     .')'
                     .'|Trois/([^/]++)(?'
-                        .'|(*:522)'
-                        .'|/edit(*:535)'
-                        .'|(*:543)'
+                        .'|(*:471)'
+                        .'|/edit(*:484)'
+                        .'|(*:492)'
                     .')'
                     .'|Un/(?'
-                        .'|(\\d+)/edit(*:568)'
-                        .'|(\\d+)(*:581)'
+                        .'|(\\d+)/edit(*:517)'
+                        .'|(\\d+)(*:530)'
                     .')'
                 .')'
-                .'|/img/sat/(?'
-                    .'|([^/]++)(*:611)'
-                    .'|toggleAll(*:628)'
+                .'|/fichier/(?'
+                    .'|([^/]++)(*:560)'
+                    .'|toggleAll(*:577)'
                     .'|([^/]++)(?'
-                        .'|/edit(*:652)'
-                        .'|(*:660)'
+                        .'|/edit(*:601)'
+                        .'|(*:609)'
                     .')'
                 .')'
-                .'|/participants/([^/]++)(?'
-                    .'|(*:695)'
-                    .'|/edit(*:708)'
-                    .'|(*:716)'
+                .'|/par(?'
+                    .'|amGlobaux/([^/]++)(?'
+                        .'|(*:647)'
+                        .'|/edit(*:660)'
+                        .'|(*:668)'
+                    .')'
+                    .'|ticipants/([^/]++)(?'
+                        .'|(*:698)'
+                        .'|/edit(*:711)'
+                        .'|(*:719)'
+                    .')'
                 .')'
                 .'|/sessions/([^/]++)(?'
-                    .'|(*:746)'
-                    .'|/edit(*:759)'
-                    .'|(*:767)'
+                    .'|(*:750)'
+                    .'|/edit(*:763)'
+                    .'|(*:771)'
                 .')'
                 .'|/user/([^/]++)(?'
-                    .'|(*:793)'
-                    .'|/edit(*:806)'
-                    .'|(*:814)'
+                    .'|(*:797)'
+                    .'|/edit(*:810)'
+                    .'|(*:818)'
                 .')'
             .')/?$}sDu',
     ],
@@ -146,40 +146,40 @@ return [
         188 => [[['_route' => 'app_agents_show', '_controller' => 'App\\Controller\\AgentsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         201 => [[['_route' => 'app_agents_edit', '_controller' => 'App\\Controller\\AgentsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         209 => [[['_route' => 'app_agents_delete', '_controller' => 'App\\Controller\\AgentsController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        242 => [[['_route' => 'category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        255 => [[['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        263 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        289 => [[['_route' => 'app_chrono_show', '_controller' => 'App\\Controller\\ChronoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        302 => [[['_route' => 'app_chrono_edit', '_controller' => 'App\\Controller\\ChronoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        310 => [[['_route' => 'app_chrono_delete', '_controller' => 'App\\Controller\\ChronoController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        340 => [[['_route' => 'voir', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        370 => [[['_route' => 'document_show', '_controller' => 'App\\Controller\\DocumentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        383 => [[['_route' => 'document_edit', '_controller' => 'App\\Controller\\DocumentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        391 => [[['_route' => 'document_delete', '_controller' => 'App\\Controller\\DocumentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        417 => [[['_route' => 'app_dossier_show', '_controller' => 'App\\Controller\\DossierController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        430 => [[['_route' => 'app_dossier_edit', '_controller' => 'App\\Controller\\DossierController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        438 => [[['_route' => 'app_dossier_delete', '_controller' => 'App\\Controller\\DossierController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        475 => [[['_route' => 'app_enigme_deux_show', '_controller' => 'App\\Controller\\EnigmeDeuxController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        488 => [[['_route' => 'app_enigme_deux_edit', '_controller' => 'App\\Controller\\EnigmeDeuxController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        496 => [[['_route' => 'app_enigme_deux_delete', '_controller' => 'App\\Controller\\EnigmeDeuxController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        522 => [[['_route' => 'app_enigme_trois_show', '_controller' => 'App\\Controller\\EnigmeTroisController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        535 => [[['_route' => 'app_enigme_trois_edit', '_controller' => 'App\\Controller\\EnigmeTroisController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        543 => [[['_route' => 'app_enigme_trois_delete', '_controller' => 'App\\Controller\\EnigmeTroisController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        568 => [[['_route' => 'app_enigme_un_edit', '_controller' => 'App\\Controller\\EnigmeUnController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        581 => [[['_route' => 'app_enigme_un_delete', '_controller' => 'App\\Controller\\EnigmeUnController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        611 => [[['_route' => 'app_img_sat_show', '_controller' => 'App\\Controller\\ImgSatController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        628 => [[['_route' => 'app_img_sat_toggle_all', '_controller' => 'App\\Controller\\ImgSatController::toggleAll'], [], ['POST' => 0], null, false, false, null]],
-        652 => [[['_route' => 'app_img_sat_edit', '_controller' => 'App\\Controller\\ImgSatController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        660 => [[['_route' => 'app_img_sat_delete', '_controller' => 'App\\Controller\\ImgSatController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        695 => [[['_route' => 'app_participants_show', '_controller' => 'App\\Controller\\ParticipantsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        708 => [[['_route' => 'app_participants_edit', '_controller' => 'App\\Controller\\ParticipantsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        716 => [[['_route' => 'app_participants_delete', '_controller' => 'App\\Controller\\ParticipantsController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        746 => [[['_route' => 'app_sessions_show', '_controller' => 'App\\Controller\\SessionController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        759 => [[['_route' => 'app_sessions_edit', '_controller' => 'App\\Controller\\SessionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        767 => [[['_route' => 'app_sessions_delete', '_controller' => 'App\\Controller\\SessionController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        793 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        806 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        814 => [
+        239 => [[['_route' => 'category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        252 => [[['_route' => 'category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        260 => [[['_route' => 'category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        289 => [[['_route' => 'voir', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        319 => [[['_route' => 'document_show', '_controller' => 'App\\Controller\\DocumentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        332 => [[['_route' => 'document_edit', '_controller' => 'App\\Controller\\DocumentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        340 => [[['_route' => 'document_delete', '_controller' => 'App\\Controller\\DocumentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        366 => [[['_route' => 'app_dossier_show', '_controller' => 'App\\Controller\\DossierController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        379 => [[['_route' => 'app_dossier_edit', '_controller' => 'App\\Controller\\DossierController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        387 => [[['_route' => 'app_dossier_delete', '_controller' => 'App\\Controller\\DossierController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        424 => [[['_route' => 'app_enigme_deux_show', '_controller' => 'App\\Controller\\EnigmeDeuxController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        437 => [[['_route' => 'app_enigme_deux_edit', '_controller' => 'App\\Controller\\EnigmeDeuxController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        445 => [[['_route' => 'app_enigme_deux_delete', '_controller' => 'App\\Controller\\EnigmeDeuxController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        471 => [[['_route' => 'app_enigme_trois_show', '_controller' => 'App\\Controller\\EnigmeTroisController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        484 => [[['_route' => 'app_enigme_trois_edit', '_controller' => 'App\\Controller\\EnigmeTroisController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        492 => [[['_route' => 'app_enigme_trois_delete', '_controller' => 'App\\Controller\\EnigmeTroisController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        517 => [[['_route' => 'app_enigme_un_edit', '_controller' => 'App\\Controller\\EnigmeUnController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        530 => [[['_route' => 'app_enigme_un_delete', '_controller' => 'App\\Controller\\EnigmeUnController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        560 => [[['_route' => 'app_fichier_show', '_controller' => 'App\\Controller\\FichierController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        577 => [[['_route' => 'app_fichier_toggle_all', '_controller' => 'App\\Controller\\FichierController::toggleAll'], [], ['POST' => 0], null, false, false, null]],
+        601 => [[['_route' => 'app_fichier_edit', '_controller' => 'App\\Controller\\FichierController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        609 => [[['_route' => 'app_fichier_delete', '_controller' => 'App\\Controller\\FichierController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        647 => [[['_route' => 'app_chrono_show', '_controller' => 'App\\Controller\\ParamGlobaux::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        660 => [[['_route' => 'app_chrono_edit', '_controller' => 'App\\Controller\\ParamGlobaux::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        668 => [[['_route' => 'app_chrono_delete', '_controller' => 'App\\Controller\\ParamGlobaux::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        698 => [[['_route' => 'app_participants_show', '_controller' => 'App\\Controller\\ParticipantsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        711 => [[['_route' => 'app_participants_edit', '_controller' => 'App\\Controller\\ParticipantsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        719 => [[['_route' => 'app_participants_delete', '_controller' => 'App\\Controller\\ParticipantsController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        750 => [[['_route' => 'app_sessions_show', '_controller' => 'App\\Controller\\SessionController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        763 => [[['_route' => 'app_sessions_edit', '_controller' => 'App\\Controller\\SessionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        771 => [[['_route' => 'app_sessions_delete', '_controller' => 'App\\Controller\\SessionController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        797 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        810 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        818 => [
             [['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

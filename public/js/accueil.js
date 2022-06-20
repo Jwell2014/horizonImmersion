@@ -31,31 +31,31 @@ const dossier = document.querySelector('.sub-nav');
 const openDocs = document.querySelectorAll('.openDocument');
 const docs = document.querySelectorAll('.sub-doc');
 
-let openDossier= false;
+let openDossier = false;
 
 
 openNavCateg.addEventListener('click', (e) => {
     console.log(e);
     openDossier = !openDossier;
-    openDossier ? dossier.classList.add('openDossier') : dossier.classList.remove('openDossier') ;
+    openDossier ? dossier.classList.add('openDossier') : dossier.classList.remove('openDossier');
 });
 
 
-for(let i = 0; i < openDocs.length; i++){
-    console.log(i);
+for (let i = 0; i < openDocs.length; i++) {
+    // console.log(i);
     openDocs[i].addEventListener('click', (e) => {
         console.log(e.target.id)
-        for(let e = 0; e < docs.length; e++){
+        for (let e = 0; e < docs.length; e++) {
             openDossier = !openDossier;
             openDossier ? docs[e].classList.add('openDoc') : docs[e].classList.remove('openDoc');
 
             console.log(docs[e])
 
-        };
+        }
+        ;
 
-});
+    });
 }
-
 
 
 // openDocs.addEventListener('click', () => {
@@ -66,12 +66,7 @@ for(let i = 0; i < openDocs.length; i++){
 // });
 
 
-
-
-
-
 // script pour le bouton apli tableau et ratp
-
 
 
 /*
@@ -91,8 +86,7 @@ document.querySelector('.btn-secondary').addEventListener('click', () => {
 });*/
 
 
-
-// script pour le chrono - horloge
+// script pour le paramGlobaux - horloge
 
 
 let hour = 11;
@@ -166,8 +160,6 @@ function timer() {
         hour++;
 
     }
-
-
 
 
     document.getElementById('hour').innerText = returnData(hour);
@@ -277,3 +269,18 @@ function returnData(input) {
 //         } else $(".stationIcon i").css({color: "#f9cc01"})
 //     }
 // }), 250);
+
+//js de l'affichage de la ligne de métro
+var val = 0,
+    progress = 0;
+
+function progressBar() {
+    val += 0.005;
+    progress = (val * 50 > 1225) ? 1225 : val * 50; /* 50 is 1/8th of height, 400 is height */
+    $('.progress-now-vertical').attr('style', 'width: ' + progress + 'px');
+    if (val > 25) val = 0;
+    anim = window.requestAnimationFrame(progressBar);
+}
+
+progressBar();
+
