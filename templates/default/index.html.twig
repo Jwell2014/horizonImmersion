@@ -381,11 +381,9 @@
 
                         <!-- Button Assemblée Nationale-->
                         {% for appliAN in an %}
-                            <div class="">
-                                <button type="button" class="btn btnApli {% if appliAN.isActive == 0 %}hidden{% endif %}" data-bs-toggle="modal" data-bs-target="#modalAN"><img class=""  src="{{ asset("images/" ~ appliAN.nom ~ ".png") }}" height="40px" width="50px">
-                            </div>
-                            {% endfor %}
+                                <button type="button" class="btn btnApli {% if appliAN.isActive == 0 %}hidden{% endif %}" data-bs-toggle="modal" data-bs-target="#modalAN"><img class=""  src="{{ asset("images/" ~ appliAN.nom ~ ".png") }}" height="40px" width="40px">
                         </button>
+                            {% endfor %}
                         <!-- Modal -->
                         <div class="modal fade mx-auto" id="modalAN" tabindex="-1" aria-labelledby="exampleModalLabel"
                              aria-hidden="true">
