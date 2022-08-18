@@ -4323,3 +4323,13 @@ d993aa,127.0.0.1,GET,http://127.0.0.1:8000/images/category/,1652873898,3a5b4f,40
 cc0b7c,127.0.0.1,GET,http://127.0.0.1:8001/,1653484760,,200
 d4f116,127.0.0.1,GET,http://127.0.0.1:8001/images/category/,1653484762,b231f9,404
 b231f9,127.0.0.1,GET,http://127.0.0.1:8001/images/category/,1653484763,,404
+a9c300,127.0.0.1,GET,http://127.0.0.1:8000/,1659790047,,200
+acea2e,127.0.0.1,GET,http://127.0.0.1:8000/images/category/,1659790047,ecd2db,404
+ecd2db,127.0.0.1,GET,http://127.0.0.1:8000/images/category/,1659790047,,404
+a2de77,127.0.0.1,GET,http://127.0.0.1:8000/images/category/langue-629f0859cb176.svg,1659790047,3fe780,404
+3fe780,127.0.0.1,GET,http://127.0.0.1:8000/images/category/langue-629f0859cb176.svg,1659790047,,404
+aeb03b,127.0.0.1,GET,http://127.0.0.1:8000/,1659790072,,200
+b30793,127.0.0.1,GET,http://127.0.0.1:8000/images/category/langue-629f0859cb176.svg,1659790072,81fbe9,404
+81fbe9,127.0.0.1,GET,http://127.0.0.1:8000/images/category/langue-629f0859cb176.svg,1659790072,,404
+86ac76,127.0.0.1,GET,http://127.0.0.1:8000/images/category/,1659790072,e0b7c0,404
+e0b7c0,127.0.0.1,GET,http://127.0.0.1:8000/images/category/,1659790072,,404
